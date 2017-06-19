@@ -3,6 +3,7 @@ package main;
 import java.sql.SQLException;
 
 import controller.ControllerFacade;
+import model.dao.*;
 import model.ModelFacade;
 import view.ViewFacade;
 
@@ -24,7 +25,7 @@ public abstract class Main {
         final ControllerFacade controller = new ControllerFacade(new ViewFacade(), new ModelFacade());
 
         try {
-            controller.start();
+            controller.start(5);
         } catch (final SQLException exception) {
             exception.printStackTrace();
         }
