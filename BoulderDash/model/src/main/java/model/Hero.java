@@ -17,6 +17,7 @@ public class Hero extends Observable {
 		this.posY= 1 ;
 		this.direction=3;
 		this.aLive= true;
+		this.diamonds= 0;
 	}
 	public void walkOn(){
 		

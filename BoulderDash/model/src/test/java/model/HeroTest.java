@@ -92,12 +92,17 @@ public class HeroTest {
 
 	@Test
 	public void testGetDiamonds() {
-		fail("Not yet implemented");
+		Hero hero = new Hero();
+		int expected = 0;
+		assertEquals(expected, hero.getDiamonds());
 	}
 
 	@Test
 	public void testSetDiamonds() {
-		fail("Not yet implemented");
+		Hero hero = new Hero ();
+		int expected = 5;
+		hero.setDiamonds(5);
+		assertEquals(expected, hero.getDiamonds());
 	}
 
 	@Test
@@ -110,7 +115,11 @@ public class HeroTest {
 
 	@Test
 	public void testSetaLive() {
-		fail("Not yet implemented");
+		Hero hero = new Hero();
+		
+		boolean expected= false;
+		hero.setaLive(false);
+		assertEquals(expected, hero.isaLive());
 	}
 
 	@Test
