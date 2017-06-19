@@ -12,6 +12,7 @@ public class GroundTest {
 
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
+		Ground ground = new Ground(10, 5, null);
 	}
 
 	@AfterClass
@@ -33,22 +34,38 @@ public class GroundTest {
 
 	@Test
 	public void testGetPosX() {
-		fail("Not yet implemented");
+		int expected = 10;
+		
+		Ground ground = new Ground(10, 5, null);
+		
+		assertEquals(expected, ground.getPosX());
 	}
 
 	@Test
 	public void testSetPosX() {
-		fail("Not yet implemented");
+		Ground ground = new Ground(10, 5, null);
+		int expected = 11;
+		ground.setPosX(11);
+		assertEquals(expected, ground.getPosX());
+		
+		
 	}
 
 	@Test
 	public void testGetPosY() {
-		fail("Not yet implemented");
+		int expected = 5;
+		
+		Ground ground = new Ground(10, 5, null);
+		
+		assertEquals(expected, ground.getPosY());
 	}
 
 	@Test
 	public void testSetPosY() {
-		fail("Not yet implemented");
+		Ground ground = new Ground(10, 5, null);
+		int expected = 7;
+		ground.setPosY(7);
+		assertEquals(expected, ground.getPosY());
 	}
 
 	@Test
@@ -63,12 +80,16 @@ public class GroundTest {
 
 	@Test
 	public void testIsBreakable() {
-		fail("Not yet implemented");
+		Ground ground = new Ground(10, 5, null);
+		boolean expected = true;
+		assertEquals(expected, ground.isBreakable());
 	}
 
 	@Test
 	public void testIsBlocker() {
-		fail("Not yet implemented");
+		Ground ground = new Ground(10, 5, null);
+		boolean expected = false;
+		assertEquals(expected, ground.isBlocker());
 	}
 
 }
