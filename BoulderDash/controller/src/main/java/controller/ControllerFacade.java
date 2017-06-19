@@ -41,8 +41,8 @@ public class ControllerFacade implements IController {
      * @throws SQLException
      *             the SQL exception
      */
-    public void start() throws SQLException {
-        this.getView().displayMessage(this.getModel().callMapContent(1).toString());
+    public void start(final int id_map) throws SQLException {
+        this.getView().displayMessage(this.getModel().callMapContent(id_map).toString());
 
         final List<Example> examples = this.getModel().getAllExamples();
         final StringBuilder message = new StringBuilder();

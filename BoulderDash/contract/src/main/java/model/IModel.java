@@ -41,4 +41,6 @@ public interface IModel {
      *             the SQL exception
      */
     List<Example> getAllExamples() throws SQLException;
+
+	String callMapContent(int i) throws SQLException;
 }

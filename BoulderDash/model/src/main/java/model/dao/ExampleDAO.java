@@ -17,11 +17,10 @@ import model.Example;
 public abstract class ExampleDAO extends AbstractDAO {
 
     /** The sql example by id. */
-    private static String callMapContent   = "{call CallMap(?)}";
+    private static String callMapContent   = "{call CallMap(?,?)}";
 
 
     /** The id column index. */
-    private static int    id_map    = 2;
 
     /**
      * Gets the example by id.
@@ -32,17 +31,17 @@ public abstract class ExampleDAO extends AbstractDAO {
      * @throws SQLException
      *             the SQL exception
      */
-    public static Example callMapContent(final int id_map) throws SQLException {
+    public static String callMapContent(final int id_map) throws SQLException {
         final CallableStatement callStatement = prepareCall(callMapContent);
-        Example example = null;
         callStatement.setInt(1,id_map);
+        callStatement.registerOutParameter(2, java.sql.Types.VARCHAR);
         callStatement.execute();
         
-        String result = callStatement.getString(1);
+        String result = callStatement.getString(2);
         
         System.out.println(result);
         
-        return example;
+        return result;
     }
 
     /**
