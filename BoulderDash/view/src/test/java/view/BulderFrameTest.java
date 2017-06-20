@@ -2,6 +2,8 @@ package view;
 
 import static org.junit.Assert.*;
 
+import java.awt.event.KeyEvent;
+
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -55,7 +57,9 @@ public class BulderFrameTest {
 
 	@Test
 	public void testKeyPressed() {
-		fail("Not yet implemented");
+		fail("waf");
+		
+		
 	}
 
 	@Test
