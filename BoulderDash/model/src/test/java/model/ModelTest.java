@@ -28,7 +28,9 @@ public class ModelTest {
 
 	@Test
 	public void testGetHero() {
-		fail("Not yet implemented");
+		Hero hero = new Hero();
+		assertNotNull(hero);
+		assertEquals(0, hero.getDiamonds());
 	}
 
 	@Test
