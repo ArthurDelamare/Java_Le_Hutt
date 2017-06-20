@@ -35,14 +35,14 @@ public class GroundTest {
 	public void testGetPosX() {
 		int expected = 10;
 		
-		Ground ground = new Ground(10, 5, null);
+		Ground ground = new Ground(10, 5, null, null);
 		
 		assertEquals(expected, ground.getPosX());
 	}
 
 	@Test
 	public void testSetPosX() {
-		Ground ground = new Ground(10, 5, null);
+		Ground ground = new Ground(10, 5, null, null);
 		int expected = 11;
 		ground.setPosX(11);
 		assertEquals(expected, ground.getPosX());
@@ -54,14 +54,14 @@ public class GroundTest {
 	public void testGetPosY() {
 		int expected = 5;
 		
-		Ground ground = new Ground(10, 5, null);
+		Ground ground = new Ground(10, 5, null, null);
 		
 		assertEquals(expected, ground.getPosY());
 	}
 
 	@Test
 	public void testSetPosY() {
-		Ground ground = new Ground(10, 5, null);
+		Ground ground = new Ground(10, 5, null, null);
 		int expected = 7;
 		ground.setPosY(7);
 		assertEquals(expected, ground.getPosY());
@@ -79,14 +79,14 @@ public class GroundTest {
 
 	@Test
 	public void testIsBreakable() {
-		Ground ground = new Ground(10, 5, null);
+		Ground ground = new Ground(10, 5, null, null);
 		boolean expected = true;
 		assertEquals(expected, ground.isBreakable());
 	}
 
 	@Test
 	public void testIsBlocker() {
-		Ground ground = new Ground(10, 5, null);
+		Ground ground = new Ground(10, 5, null, null);
 		boolean expected = false;
 		assertEquals(expected, ground.isBlocker());
 	}
