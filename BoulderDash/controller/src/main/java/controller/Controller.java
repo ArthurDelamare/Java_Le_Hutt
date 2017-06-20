@@ -7,7 +7,7 @@ public class Controller implements IController{
 	
 	private IView view;
 	private IModelT model;
-	private MovementController movementController;
+	private IMovementController movementController;
 	
 	public Controller(IView view, IModelT model){
 		this.view = view;

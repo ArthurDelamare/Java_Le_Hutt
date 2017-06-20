@@ -30,7 +30,7 @@ public class BulderFrameTest {
 
 	@Test
 	public void testGetPanel() {
-		BulderPanel panel = new BulderPanel();
+		IBulderPanel panel = new BulderPanel();
 		boolean test;
 		if (panel instanceof BulderPanel){
 			test = true;
@@ -43,7 +43,7 @@ public class BulderFrameTest {
 
 	@Test
 	public void testSetPanel() {
-		BulderPanel panel = new BulderPanel();
+		IBulderPanel panel = new BulderPanel();
 		boolean test;
 		if (panel instanceof BulderPanel){
 			test = true;
