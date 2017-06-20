@@ -1,5 +1,5 @@
 package model;
 
 public interface IModelT {
-	IHero getHero();
+	IHero getHero();		IMap getMap();	
 }

@@ -3,7 +3,7 @@ package model;
 public class Model implements IModelT {
 	
 	private IHero hero;
-	private Map map;
+	private IMap map;
 	
 	public Model(){
 		
@@ -24,7 +24,7 @@ public class Model implements IModelT {
 	 * @see model.IModel#getMap()
 	 */
 	
-	public Map getMap() {
+	public IMap getMap() {
 		return map;
 	}
 	

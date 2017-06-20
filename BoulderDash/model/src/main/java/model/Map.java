@@ -2,7 +2,7 @@ package model;
 
 import java.util.ArrayList;
 
-public class Map {
+public class Map implements IMap {
 
 	private int map[][];
 	public static int widthTable = 24;
@@ -16,14 +16,26 @@ public class Map {
 		
 	}
 	
+	/* (non-Javadoc)
+	 * @see model.IMap#getCellTable(int, int)
+	 */
+	@Override
 	public int getCellTable(int posX, int posY){
 		return map[posX][posY];
 	}
 	
+	/* (non-Javadoc)
+	 * @see model.IMap#setCellTable(int, int, int)
+	 */
+	@Override
 	public void setCellTable(int typeMapeable, int posX, int posY){
 		this.map[posX][posY] = typeMapeable;
 	}
 	
+	/* (non-Javadoc)
+	 * @see model.IMap#getMapObjects()
+	 */
+	@Override
 	public ArrayList<Mapeable> getMapObjects(){
 		return mapObjects;
 	}
