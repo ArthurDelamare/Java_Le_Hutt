@@ -1,14 +1,14 @@
 package controller;
 
-import model.IModel;
+import model.IModelT;
 import view.IView;
 
 public class Controller implements IController{
 	
 	private IView view;
-	private IModel model;
+	private IModelT model;
 	
-	public Controller(IView view, IModel model){
+	public Controller(IView view, IModelT model){
 		this.view = view;
 		this.model = model;
 		this.view.run();

@@ -4,7 +4,7 @@ import java.sql.SQLException;
 
 import controller.Controller;
 import controller.ControllerFacade;
-import model.IModel;
+import model.IModelT;
 import controller.IController;
 import model.Model;
 import model.dao.*;
@@ -32,7 +32,7 @@ public abstract class Main {
         final ControllerFacade controller = new ControllerFacade(new ViewFacade(), new ModelFacade());
 
         final IView view = new View();
-        final IModel model = new Model();
+        final IModelT model = new Model();
         final IController controllerM = new Controller(view, model);
         
         try {

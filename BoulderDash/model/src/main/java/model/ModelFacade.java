@@ -11,7 +11,7 @@ import model.dao.ExampleDAO;
  * @author Jean-Aymeric DIET jadiet@cesi.fr
  * @version 1.0
  */
-public class ModelFacade implements IModelProvisoire {
+public class ModelFacade implements IModel {
 
     /**
      * Instantiates a new model facade.
@@ -24,7 +24,7 @@ public class ModelFacade implements IModelProvisoire {
      * (non-Javadoc)
      * @see model.IModel#getExampleById(int)
      */
-    @Override
+    
     public String callMapContent(final int id) throws SQLException {
         return ExampleDAO.callMapContent(id);
     }

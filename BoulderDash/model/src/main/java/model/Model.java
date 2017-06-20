@@ -1,6 +1,6 @@
 package model;
 
-public class Model implements IModel {
+public class Model implements IModelT {
 	
 	private Hero hero;
 	private Map map;
