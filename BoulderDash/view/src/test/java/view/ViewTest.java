@@ -28,7 +28,16 @@ public class ViewTest {
 
 	@Test
 	public void testGetBulderFrame() {
-		fail("Not yet implemented");
+		BulderFrame bulder = new BulderFrame();
+		boolean test;
+		if (bulder instanceof BulderFrame){
+			test = true;
+		}
+		else {
+			test = false;
+		}
+		assertNotNull(test);
+		
 	}
 
 	@Test
