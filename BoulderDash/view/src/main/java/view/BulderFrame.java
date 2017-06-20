@@ -5,10 +5,13 @@ import java.awt.event.KeyListener;
 
 import javax.swing.JFrame;
 
+import controller.MovementController;
+
 
 public class BulderFrame extends JFrame implements KeyListener{
 	
 	private BulderPanel bulderPanel;
+	private MovementController movementController;
 	
 	public BulderFrame(){
 			
@@ -50,6 +53,9 @@ public class BulderFrame extends JFrame implements KeyListener{
 		
 	}
 	
+	public void setMovementController(MovementController movementController){
+		this.movementController = movementController;
+	}
 	
 }
 

@@ -6,7 +6,7 @@ public class View {
 	
 	public View(){
 		
-		this.bulderFrame = new BulderFrame();
+		
 		
 	}
 
@@ -18,6 +18,9 @@ public class View {
 		this.bulderFrame = bulderFrame;
 	}
 	
+	public void run(){
+		this.bulderFrame = new BulderFrame();
+	}
 	
 	
 }
