@@ -35,7 +35,8 @@ public class ModelTest {
 
 	@Test
 	public void testGetMap() {
-		fail("Not yet implemented");
+		Map map = new Map();
+		assertNotNull(map);
 	}
 
 }
