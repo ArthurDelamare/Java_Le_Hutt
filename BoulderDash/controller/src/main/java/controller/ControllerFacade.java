@@ -4,8 +4,8 @@ import java.sql.SQLException;
 import java.util.List;
 
 import model.Example;
-import model.IModel;
-import view.IView;
+import model.IModelProvisoire;
+import view.IViewProvisoire;
 
 /**
  * <h1>The Class ControllerFacade provides a facade of the Controller component.</h1>
@@ -16,10 +16,10 @@ import view.IView;
 public class ControllerFacade implements IController {
 
     /** The view. */
-    private final IView  view;
+    private final IViewProvisoire  view;
 
     /** The model. */
-    private final IModel model;
+    private final IModelProvisoire model;
 
     /**
      * Instantiates a new controller facade.
@@ -29,7 +29,7 @@ public class ControllerFacade implements IController {
      * @param model
      *            the model
      */
-    public ControllerFacade(final IView view, final IModel model) {
+    public ControllerFacade(final IViewProvisoire view, final IModelProvisoire model) {
         super();
         this.view = view;
         this.model = model;
@@ -61,7 +61,7 @@ public class ControllerFacade implements IController {
      *
      * @return the view
      */
-    public IView getView() {
+    public IViewProvisoire getView() {
         return this.view;
     }
 
@@ -70,7 +70,7 @@ public class ControllerFacade implements IController {
      *
      * @return the model
      */
-    public IModel getModel() {
+    public IModelProvisoire getModel() {
         return this.model;
     }
 }
