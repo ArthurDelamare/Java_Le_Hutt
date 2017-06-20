@@ -9,6 +9,7 @@ public abstract class AbstractDecor implements Mapeable {
 	protected Image image;
 	protected boolean breakable;
 	protected boolean blocker;
+	protected int mapTable[][];
 	
 	/* (non-Javadoc)
 	 * @see model.Mapeable#getPosX()
@@ -62,5 +63,13 @@ public abstract class AbstractDecor implements Mapeable {
 	public boolean isBlocker() {
 		return blocker;
 	}
+	public int[][] getMapTable() {
+		return mapTable;
+	}
+	public void setMapTable(int[][] mapTable) {
+		this.mapTable = mapTable;
+	}
+	
+	
 	
 }
