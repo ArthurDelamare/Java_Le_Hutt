@@ -5,6 +5,8 @@ import java.sql.SQLException;
 import controller.Controller;
 import controller.ControllerFacade;
 import controller.IController;
+import model.IModel;
+import model.Model;
 import model.ModelFacade;
 import view.IView;
 import view.View;
@@ -29,7 +31,8 @@ public abstract class Main {
         final ControllerFacade controller = new ControllerFacade(new ViewFacade(), new ModelFacade());
 
         final IView view = new View();
-        final IController controllerM = new Controller(view);
+        final IModel model = new Model();
+        final IController controllerM = new Controller(view, model);
         
         try {
             controller.start();

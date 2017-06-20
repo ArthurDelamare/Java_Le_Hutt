@@ -41,4 +41,5 @@ public interface IModelProvisoire {
      *             the SQL exception
      */
     List<Example> getAllExamples() throws SQLException;
+
 }

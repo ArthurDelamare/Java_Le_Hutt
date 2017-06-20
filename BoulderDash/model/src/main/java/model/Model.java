@@ -1,6 +1,6 @@
 package model;
 
-public class Model {
+public class Model implements IModel {
 	
 	private Hero hero;
 	private Map map;
@@ -12,10 +12,18 @@ public class Model {
 		
 	}
 
+	/* (non-Javadoc)
+	 * @see model.IModel#getHero()
+	 */
+	
 	public Hero getHero() {
 		return hero;
 	}
 
+	/* (non-Javadoc)
+	 * @see model.IModel#getMap()
+	 */
+	
 	public Map getMap() {
 		return map;
 	}
