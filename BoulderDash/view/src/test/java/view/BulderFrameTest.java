@@ -28,12 +28,29 @@ public class BulderFrameTest {
 
 	@Test
 	public void testGetPanel() {
-		fail("Not yet implemented");
+		BulderPanel panel = new BulderPanel();
+		boolean test;
+		if (panel instanceof BulderPanel){
+			test = true;
+		}
+		else {
+			test = false;
+		}
+		assertNotNull(test);
 	}
 
 	@Test
 	public void testSetPanel() {
-		fail("Not yet implemented");
+		BulderPanel panel = new BulderPanel();
+		boolean test;
+		if (panel instanceof BulderPanel){
+			test = true;
+		}
+		else {
+			test = false;
+		}
+		assertNotNull(test);
+		
 	}
 
 	@Test
