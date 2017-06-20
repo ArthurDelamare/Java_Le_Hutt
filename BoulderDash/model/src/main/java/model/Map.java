@@ -9,4 +9,22 @@ public class Map {
 	public static int heightTable = 24;
 	private ArrayList<Mapeable> mapObjects;
 	
+	public Map(){
+		
+		this.map = new int[widthTable][heightTable];
+		this.mapObjects = new ArrayList<Mapeable>();
+		
+	}
+	
+	public int getCellTable(int posX, int posY){
+		return map[posX][posY];
+	}
+	
+	public void setCellTable(int typeMapeable, int posX, int posY){
+		this.map[posX][posY] = typeMapeable;
+	}
+	
+	public ArrayList<Mapeable> getMapObjects(){
+		return mapObjects;
+	}
 }
