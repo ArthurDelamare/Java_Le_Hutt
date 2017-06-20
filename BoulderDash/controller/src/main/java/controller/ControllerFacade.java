@@ -5,7 +5,7 @@ import java.util.List;
 
 import model.Example;
 import model.IModel;
-import view.IView;
+import view.IViewProvisoire;
 
 /**
  * <h1>The Class ControllerFacade provides a facade of the Controller component.</h1>
@@ -16,7 +16,7 @@ import view.IView;
 public class ControllerFacade implements IController {
 
     /** The view. */
-    private final IView  view;
+    private final IViewProvisoire  view;
 
     /** The model. */
     private final IModel model;
@@ -29,7 +29,7 @@ public class ControllerFacade implements IController {
      * @param model
      *            the model
      */
-    public ControllerFacade(final IView view, final IModel model) {
+    public ControllerFacade(final IViewProvisoire view, final IModel model) {
         super();
         this.view = view;
         this.model = model;
@@ -41,10 +41,8 @@ public class ControllerFacade implements IController {
      * @throws SQLException
      *             the SQL exception
      */
-    public void start() throws SQLException {
-        this.getView().displayMessage(this.getModel().getExampleById(1).toString());
-
-        this.getView().displayMessage(this.getModel().getExampleByName("Example 2").toString());
+    public void start(final int id_map) throws SQLException {
+        this.getView().displayMessage(this.getModel().callMapContent(id_map).toString());
 
         final List<Example> examples = this.getModel().getAllExamples();
         final StringBuilder message = new StringBuilder();
@@ -61,7 +59,7 @@ public class ControllerFacade implements IController {
      *
      * @return the view
      */
-    public IView getView() {
+    public IViewProvisoire getView() {
         return this.view;
     }
 
