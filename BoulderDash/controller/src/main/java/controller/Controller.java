@@ -14,6 +14,7 @@ public class Controller implements IController{
 		this.model = model;
 		this.movementController = new MovementController();
 		this.view.run();
+		this.view.getBulderFrame().setMovementController(movementController);
 	}
 	
 }
