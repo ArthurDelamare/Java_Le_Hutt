@@ -2,7 +2,7 @@ package model;
 
 public class Model implements IModelT {
 	
-	private Hero hero;
+	private IHero hero;
 	private Map map;
 	
 	public Model(){
@@ -16,7 +16,7 @@ public class Model implements IModelT {
 	 * @see model.IModel#getHero()
 	 */
 	
-	public Hero getHero() {
+	public IHero getHero() {
 		return hero;
 	}
 
