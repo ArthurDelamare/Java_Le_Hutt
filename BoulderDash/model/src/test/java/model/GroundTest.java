@@ -12,7 +12,6 @@ public class GroundTest {
 
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
-		Ground ground = new Ground(10, 5, null);
 	}
 
 	@AfterClass
