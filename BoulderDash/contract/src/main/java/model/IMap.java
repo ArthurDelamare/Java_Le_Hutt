@@ -13,5 +13,9 @@ public interface IMap {
 	void fillMapObjects();
 	
 	void createObject(int TypeObject, int posX, int posY);
+	
+	void CallMapTab(String content);
+	
+	String getStringBDD();
 
 }

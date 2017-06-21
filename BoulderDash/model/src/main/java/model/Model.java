@@ -1,5 +1,9 @@
 package model;
 
+import java.sql.SQLException;
+
+import model.dao.ExampleDAO;
+
 public class Model implements IModelT {
 	
 	private IHero hero;
@@ -7,9 +11,16 @@ public class Model implements IModelT {
 	
 	public Model(){
 		
-		this.hero = new Hero((Map)map);
-		this.map = new Map();
+		try {
+			this.map = new Map(callMapContent(2));
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+		this.map.CallMapTab(this.map.getStringBDD());
 		this.map.fillMapObjects();
+		
+		this.hero = new Hero((Map)map);
 		
 	}
 
@@ -29,6 +40,8 @@ public class Model implements IModelT {
 		return map;
 	}
 	
-	
+	public String callMapContent(final int id) throws SQLException {
+        return ExampleDAO.callMapContent(id);
+    }
 	
 }

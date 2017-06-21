@@ -3,20 +3,16 @@ package model;
 import java.util.ArrayList;
 
 public class Map implements IMap {
-
-	private int map[][];
-	public static int widthTable = 24;
-	public static int heightTable = 24;
-	private ArrayList<Mapeable> mapObjects;
-	
-	public Map(){
-		
-		this.map = new int[widthTable][heightTable];
-		this.mapObjects = new ArrayList<Mapeable>();
-		this.setCellTable(0, 0, 0);
-		this.setCellTable(1, 0, 1);
+	private int map[][];
+	public static int widthTable = 38;
+	public static int heightTable = 40;
+	private ArrayList<Mapeable> mapObjects;	private String stringBDD;
+	public Map(String stringBDD){
+		this.map = new int[widthTable][heightTable];
+		this.mapObjects = new ArrayList<Mapeable>();		this.stringBDD = stringBDD;		System.out.println(stringBDD);
+		this.setCellTable(0, 0, 0);
+		this.setCellTable(1, 0, 1);
 		this.setCellTable(2, 0, 2);
-		
 	}
 	
 	@Override
@@ -35,9 +31,9 @@ public class Map implements IMap {
 	}
 	
 	public void CallMapTab(String content){
-		for (int y=0; y<38; y++){
-			for (int x=0; x<40; x++){
-				map[x][y]= Integer.parseInt(content.substring(x-1, x));
+		for (int y=0; y<40; y++){
+			for (int x=0; x<38; x++){
+				this.map[x][y]= Integer.parseInt(content.substring(x, x+1));
 			}
 		}
 	}
@@ -66,5 +62,5 @@ public class Map implements IMap {
 			}
 		}
 		System.out.println(mapObjects);
-	}
+	}	public String getStringBDD() {		return stringBDD;	}		
 }
