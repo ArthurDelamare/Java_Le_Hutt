@@ -2,7 +2,7 @@ package model;
 
 import java.awt.Image;
 
-public class Ground extends AbstractDecor{
+public class Ground extends AbstractDecor implements IGround{
 	
 	Ground(int posX, int posY, Image image, int mapTable[][]){
 		
@@ -15,6 +15,7 @@ public class Ground extends AbstractDecor{
 		
 	}
 	
+	@Override
 	public void breaking(){
 		
 	}
