@@ -28,7 +28,7 @@ public class ViewTest {
 
 	@Test
 	public void testGetBulderFrame() {
-		BulderFrame bulder = new BulderFrame();
+		IBulderFrame bulder = new BulderFrame();
 		boolean test;
 		if (bulder instanceof BulderFrame){
 			test = true;
@@ -42,7 +42,7 @@ public class ViewTest {
 
 	@Test
 	public void testSetBulderFrame() {
-		BulderFrame bulder = new BulderFrame();
+		IBulderFrame bulder = new BulderFrame();
 		boolean test;
 		if (bulder instanceof BulderFrame){
 			test = true;

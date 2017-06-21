@@ -14,7 +14,7 @@ public class View implements IView {
 	 * @see view.IView#getBulderFrame()
 	 */
 
-	public BulderFrame getBulderFrame() {
+	public IBulderFrame getBulderFrame() {
 		return bulderFrame;
 	}
 
@@ -22,8 +22,8 @@ public class View implements IView {
 	 * @see view.IView#setBulderFrame(view.BulderFrame)
 	 */
 	
-	public void setBulderFrame(BulderFrame bulderFrame) {
-		this.bulderFrame = bulderFrame;
+	public void setBulderFrame(IBulderFrame bulderFrame) {
+		this.bulderFrame = (BulderFrame) bulderFrame;
 	}
 	
 	/* (non-Javadoc)
