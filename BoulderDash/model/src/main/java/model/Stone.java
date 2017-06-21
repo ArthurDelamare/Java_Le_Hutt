@@ -2,9 +2,10 @@ package model;
 
 import java.awt.Image;
 
-public class Stone extends AbstractDecor{
+public class Stone extends AbstractDecor implements IStone{
 	
 	
+	@Override
 	public void movementFall(){
 		
 	}

@@ -2,7 +2,7 @@ package model;
 
 import java.awt.Image;
 
-public class Wall extends AbstractDecor{
+public class Wall extends AbstractDecor implements IWall{
 	
 	public Wall(int posX, int posY, Image image){
 		

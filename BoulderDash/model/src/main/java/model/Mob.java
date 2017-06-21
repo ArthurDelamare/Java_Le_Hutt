@@ -2,16 +2,19 @@ package model;
 
 import java.awt.Image;
 
-public class Mob extends AbstractDecor {
+public class Mob extends AbstractDecor implements IMove {
 
+	@Override
 	public void move(){
 		
 	}
 	
+	@Override
 	public void death(){
 		
 	}
 	
+	@Override
 	public void kill(){
 		
 	}
