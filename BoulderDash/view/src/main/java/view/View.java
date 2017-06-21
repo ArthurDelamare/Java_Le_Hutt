@@ -3,10 +3,11 @@ package view;
 public class View implements IView {
 	
 	private BulderFrame bulderFrame;
+	private GraphicsBuilder graphicsBuilder;
 	
 	public View(){
 		
-		
+		this.graphicsBuilder = new GraphicsBuilder();
 		
 	}
 
