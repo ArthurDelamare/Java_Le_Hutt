@@ -1,14 +1,17 @@
 package view;
 
+import model.IMap;
+
 public class View implements IView {
 	
 	private BulderFrame bulderFrame;
 	private BulderPanel bulderPanel;
-	private GraphicsBuilder graphicsBuilder;
+	private IMap map;
+	private IGraphicsBuilder graphicsBuilder;
 	
 	public View(){
 		
-		this.graphicsBuilder = new GraphicsBuilder();
+		this.graphicsBuilder = new GraphicsBuilder(map);
 		this.bulderPanel = new BulderPanel(this.graphicsBuilder);
 	}
 
@@ -41,6 +44,15 @@ public class View implements IView {
 		this.bulderFrame.dispose();
 		
 	}
+
+	public void setMap(IMap map) {
+		this.map = map;
+	}
+
+	public IGraphicsBuilder getGraphicsBuilder() {
+		return graphicsBuilder;
+	}
+	
 	
 	
 }
