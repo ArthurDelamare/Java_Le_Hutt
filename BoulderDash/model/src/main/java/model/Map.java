@@ -13,30 +13,50 @@ public class Map implements IMap {
 		
 		this.map = new int[widthTable][heightTable];
 		this.mapObjects = new ArrayList<Mapeable>();
+		this.setCellTable(0, 0, 0);
+		this.setCellTable(1, 0, 1);
+		this.setCellTable(2, 0, 2);
 		
 	}
 	
-	/* (non-Javadoc)
-	 * @see model.IMap#getCellTable(int, int)
-	 */
 	@Override
 	public int getCellTable(int posX, int posY){
 		return map[posX][posY];
 	}
 	
-	/* (non-Javadoc)
-	 * @see model.IMap#setCellTable(int, int, int)
-	 */
 	@Override
 	public void setCellTable(int typeMapeable, int posX, int posY){
 		this.map[posX][posY] = typeMapeable;
 	}
 	
-	/* (non-Javadoc)
-	 * @see model.IMap#getMapObjects()
-	 */
 	@Override
 	public ArrayList<Mapeable> getMapObjects(){
 		return mapObjects;
+	}
+	
+	public void createObject(int TypeObject, int posX, int posY){
+		switch(TypeObject){
+		case 0: this.mapObjects.add(new Wall(posX, posY, null));
+		break;
+		case 1: this.mapObjects.add(new Ground(posX, posY, null, this.map));
+		break;
+		case 2: this.mapObjects.add(new Stone(posX, posY, null));
+		break;
+		case 3: this.mapObjects.add(new Diamond(posX, posY, null));
+		break;
+		case 4: this.mapObjects.add(new Background(posX, posY, null));
+		break;
+		case 5: this.mapObjects.add(new Mob(posX, posY, null));
+		break;
+		}
+	}
+	
+	public void fillMapObjects(){
+		for (int i = 0; i<Map.widthTable; i++){
+			for (int j = 0; j<Map.heightTable; j++){
+				createObject(getCellTable(i,j),i,j);
+			}
+		}
+		System.out.println(mapObjects);
 	}
 }

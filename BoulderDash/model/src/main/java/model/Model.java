@@ -9,6 +9,7 @@ public class Model implements IModelT {
 		
 		this.hero = new Hero();
 		this.map = new Map();
+		this.map.fillMapObjects();
 		
 	}
 

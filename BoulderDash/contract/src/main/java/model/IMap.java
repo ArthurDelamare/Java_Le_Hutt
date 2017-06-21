@@ -9,5 +9,9 @@ public interface IMap {
 	void setCellTable(int typeMapeable, int posX, int posY);
 
 	ArrayList<Mapeable> getMapObjects();
+	
+	void fillMapObjects();
+	
+	void createObject(int TypeObject, int posX, int posY);
 
 }
