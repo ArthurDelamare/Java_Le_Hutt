@@ -1,5 +1,7 @@
 package view;
 
+import java.awt.Image;
+import java.awt.Toolkit;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
@@ -23,9 +25,9 @@ public class BulderFrame extends JFrame implements KeyListener, IBulderFrame{
 		this.setContentPane(bulderPanel);
 		
 		this.addKeyListener(this);
-		
 		this.setVisible(true);
-		
+		Image icon = Toolkit.getDefaultToolkit().getImage("iconjeu.png");
+	    this.setIconImage(icon);
 	}
 
 	/* (non-Javadoc)
