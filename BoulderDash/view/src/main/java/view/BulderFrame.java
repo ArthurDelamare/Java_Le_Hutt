@@ -13,9 +13,9 @@ public class BulderFrame extends JFrame implements KeyListener, IBulderFrame{
 	private BulderPanel bulderPanel;
 	private IMovementController movementController;
 	
-	public BulderFrame(){
+	public BulderFrame(BulderPanel bulderPanel){
 			
-		this.bulderPanel = new BulderPanel();
+		this.bulderPanel = bulderPanel;
 		
 		this.setTitle("BulderDash");
 		this.setSize(500, 500);

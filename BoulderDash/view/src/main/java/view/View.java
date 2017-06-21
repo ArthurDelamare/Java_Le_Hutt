@@ -3,12 +3,13 @@ package view;
 public class View implements IView {
 	
 	private BulderFrame bulderFrame;
+	private BulderPanel bulderPanel;
 	private GraphicsBuilder graphicsBuilder;
 	
 	public View(){
 		
 		this.graphicsBuilder = new GraphicsBuilder();
-		
+		this.bulderPanel = new BulderPanel(this.graphicsBuilder);
 	}
 
 	/* (non-Javadoc)
@@ -32,7 +33,7 @@ public class View implements IView {
 	 */
 	@Override
 	public void run(){
-		this.bulderFrame = new BulderFrame();
+		this.bulderFrame = new BulderFrame(bulderPanel);
 	}
 
 	@Override

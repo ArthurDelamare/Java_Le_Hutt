@@ -9,8 +9,10 @@ import javax.swing.JPanel;
 public class BulderPanel extends JPanel implements Observer, IBulderPanel{
 	
 	private int x = 0;
+	private GraphicsBuilder graphicsBuilder;
 	
-	public BulderPanel(){
+	public BulderPanel(GraphicsBuilder graphicsBuilder){
+		this.graphicsBuilder = graphicsBuilder;
 		System.out.println("Panel created.");
 	}
 	
