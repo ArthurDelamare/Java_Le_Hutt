@@ -8,11 +8,14 @@ public class Model implements IModelT {
 	
 	private IHero hero;
 	private IMap map;
+	private SpriteSheet spriteSheet;
 	
 	public Model(){
 		
+		this.spriteSheet = new SpriteSheet();
+		
 		try {
-			this.map = new Map(callMapContent(2));
+			this.map = new Map(callMapContent(2), spriteSheet);
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}

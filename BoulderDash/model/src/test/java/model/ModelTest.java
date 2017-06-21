@@ -35,7 +35,7 @@ public class ModelTest {
 
 	@Test
 	public void testGetMap() {
-		IMap map = new Map(null);
+		IMap map = new Map(null, null);
 		assertNotNull(map);
 	}
 

@@ -6,10 +6,10 @@ public class Map implements IMap {
 	private int map[][];
 	public static int widthTable = 38;
 	public static int heightTable = 40;
-	private ArrayList<Mapeable> mapObjects;	private String stringBDD;
-	public Map(String stringBDD){
+	private ArrayList<Mapeable> mapObjects;	private String stringBDD;	private SpriteSheet	spriteSheet;
+	public Map(String stringBDD, SpriteSheet spriteSheet){
 		this.map = new int[widthTable][heightTable];
-		this.mapObjects = new ArrayList<Mapeable>();		this.stringBDD = stringBDD;		System.out.println(stringBDD);
+		this.mapObjects = new ArrayList<Mapeable>();		this.stringBDD = stringBDD;		this.spriteSheet = spriteSheet;		System.out.println(stringBDD);
 		this.setCellTable(0, 0, 0);
 		this.setCellTable(1, 0, 1);
 		this.setCellTable(2, 0, 2);
@@ -40,9 +40,9 @@ public class Map implements IMap {
 	
 	public void createObject(int TypeObject, int posX, int posY){
 		switch(TypeObject){
-		case 0: this.mapObjects.add(new Wall(posX, posY, null));
+		case 0: this.mapObjects.add(new Wall(posX, posY, this.spriteSheet.spriteSheet(0)));
 		break;
-		case 1: this.mapObjects.add(new Ground(posX, posY, null, this.map));
+		case 1: this.mapObjects.add(new Ground(posX, posY, this.spriteSheet.spriteSheet(1), this.map));
 		break;
 		case 2: this.mapObjects.add(new Stone(posX, posY, null));
 		break;

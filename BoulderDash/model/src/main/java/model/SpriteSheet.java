@@ -3,6 +3,7 @@ package model;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
+import java.net.URISyntaxException;
 
 import javax.imageio.ImageIO;
 
@@ -16,13 +17,23 @@ public class SpriteSheet implements ISpriteSheet {
 		BufferedImage finalImage = null;
 	
 		try {
-			imageDecors = ImageIO.read(new File("textures/decors.png"));
+			try {
+				imageDecors = ImageIO.read(new File(getClass().getResource("/textures/decors.png").toURI()));
+			} catch (URISyntaxException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 		} catch (IOException e) {
 		    e.printStackTrace();
 		}
 		
 		try {
-			imageHero = ImageIO.read(new File("textures/personnage.png"));
+			try {
+				imageHero = ImageIO.read(new File(getClass().getResource("/textures/personnage.png").toURI()));
+			} catch (URISyntaxException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 		} catch (IOException e) {
 		    e.printStackTrace();
 		}
