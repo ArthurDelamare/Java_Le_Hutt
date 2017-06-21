@@ -6,8 +6,9 @@ import java.io.IOException;
 
 import javax.imageio.ImageIO;
 
-public class SpriteSheet {
+public class SpriteSheet implements ISpriteSheet {
 	
+	@Override
 	public BufferedImage spriteSheet(int typeOfDecors){
 		
 		BufferedImage imageDecors = null;
