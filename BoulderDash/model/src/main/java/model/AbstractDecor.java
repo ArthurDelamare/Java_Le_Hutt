@@ -1,5 +1,8 @@
 package model;
 
+
+
+ 
 import java.awt.Image;
 
 public abstract class AbstractDecor implements Mapeable {
