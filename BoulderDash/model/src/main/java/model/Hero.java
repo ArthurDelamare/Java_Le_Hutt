@@ -57,14 +57,10 @@ public class Hero extends Observable {
 		
 		}
 		
-		
-		
-		
-		
-		
 	}
 	
 	public void pushStone(){
+		
 		
 	}
 

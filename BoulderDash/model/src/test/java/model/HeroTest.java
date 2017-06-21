@@ -33,7 +33,8 @@ public class HeroTest {
 
 	@Test
 	public void testMove() {
-		fail("Not yet implemented");
+		Hero hero = new Hero (null);
+		
 	}
 
 	@Test

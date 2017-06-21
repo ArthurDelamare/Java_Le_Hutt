@@ -7,6 +7,7 @@ public class Diamond extends DecorWithExplosion {
 	public void addPoint(){
 		
 		
+		
 	}
 	
 	public Diamond(int posX, int posY, Image image){
