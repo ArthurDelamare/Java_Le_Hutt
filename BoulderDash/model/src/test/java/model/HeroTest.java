@@ -43,14 +43,14 @@ public class HeroTest {
 
 	@Test
 	public void testGetDirection() {
-		Hero hero = new Hero();
+		Hero hero = new Hero(null);
 		int expected = 3;
 		assertEquals(expected, hero.getDirection());
 	}
 
 	@Test
 	public void testSetDirection() {
-		Hero hero = new Hero();
+		Hero hero = new Hero(null);
 		int expected = 5;
 		hero.setDirection(5);
 		assertEquals(expected, hero.getDirection());
@@ -58,7 +58,7 @@ public class HeroTest {
 
 	@Test
 	public void testGetPosX() {
-		Hero hero = new Hero();
+		Hero hero = new Hero(null);
 		
 		int expected = 1;
 		assertEquals(expected, hero.getPosX());
@@ -66,7 +66,7 @@ public class HeroTest {
 
 	@Test
 	public void testSetPosX() {
-		Hero hero = new Hero();
+		Hero hero = new Hero(null);
 		int expected = 5;
 		hero.setPosX(5);
 		assertEquals(expected, hero.getPosX());
@@ -75,7 +75,7 @@ public class HeroTest {
 
 	@Test
 	public void testGetPosY() {
-		Hero hero = new Hero();
+		Hero hero = new Hero(null);
 		
 		int expected = 1;
 		assertEquals(expected, hero.getPosY());
@@ -83,7 +83,7 @@ public class HeroTest {
 
 	@Test
 	public void testSetPosY() {
-		Hero hero = new Hero();
+		Hero hero = new Hero(null);
 		int expected = 14;
 		hero.setPosY(14);
 		assertEquals(expected, hero.getPosY());
@@ -92,14 +92,14 @@ public class HeroTest {
 
 	@Test
 	public void testGetDiamonds() {
-		Hero hero = new Hero();
+		Hero hero = new Hero(null);
 		int expected = 0;
 		assertEquals(expected, hero.getDiamonds());
 	}
 
 	@Test
 	public void testSetDiamonds() {
-		Hero hero = new Hero ();
+		Hero hero = new Hero (null);
 		int expected = 5;
 		hero.setDiamonds(5);
 		assertEquals(expected, hero.getDiamonds());
@@ -107,7 +107,7 @@ public class HeroTest {
 
 	@Test
 	public void testIsaLive() {
-		Hero hero = new Hero();
+		Hero hero = new Hero(null);
 		
 		boolean expected = true;
 		assertEquals(expected, hero.isaLive());
@@ -115,7 +115,7 @@ public class HeroTest {
 
 	@Test
 	public void testSetaLive() {
-		Hero hero = new Hero();
+		Hero hero = new Hero(null);
 		
 		boolean expected= false;
 		hero.setaLive(false);
