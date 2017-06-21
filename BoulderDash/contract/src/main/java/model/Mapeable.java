@@ -15,5 +15,9 @@ public interface Mapeable {
 	Image getImage();
 
 	void setImage(Image image);
+	
+	int[][] getMapTable();
+
+	void setMapTable(int[][] mapTable);
 
 }

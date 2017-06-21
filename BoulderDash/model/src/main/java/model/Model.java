@@ -2,13 +2,14 @@ package model;
 
 public class Model implements IModelT {
 	
-	private Hero hero;
-	private Map map;
+	private IHero hero;
+	private IMap map;
 	
 	public Model(){
 		
-		this.hero = new Hero();
+		this.hero = new Hero((Map)map);
 		this.map = new Map();
+		this.map.fillMapObjects();
 		
 	}
 
@@ -16,7 +17,7 @@ public class Model implements IModelT {
 	 * @see model.IModel#getHero()
 	 */
 	
-	public Hero getHero() {
+	public IHero getHero() {
 		return hero;
 	}
 
@@ -24,7 +25,7 @@ public class Model implements IModelT {
 	 * @see model.IModel#getMap()
 	 */
 	
-	public Map getMap() {
+	public IMap getMap() {
 		return map;
 	}
 	

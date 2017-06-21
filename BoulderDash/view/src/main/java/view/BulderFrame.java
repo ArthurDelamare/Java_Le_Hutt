@@ -1,17 +1,19 @@
 package view;
 
+import java.awt.Image;
+import java.awt.Toolkit;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
 import javax.swing.JFrame;
 
-import controller.MovementController;
+import controller.IMovementController;
 
 
-public class BulderFrame extends JFrame implements KeyListener{
+public class BulderFrame extends JFrame implements KeyListener, IBulderFrame{
 	
 	private BulderPanel bulderPanel;
-	private MovementController movementController;
+	private IMovementController movementController;
 	
 	public BulderFrame(){
 			
@@ -23,37 +25,58 @@ public class BulderFrame extends JFrame implements KeyListener{
 		this.setContentPane(bulderPanel);
 		
 		this.addKeyListener(this);
-		
 		this.setVisible(true);
-		
+		Image icon = Toolkit.getDefaultToolkit().getImage("iconjeu.png");
+	    this.setIconImage(icon);
 	}
 
-	public BulderPanel getPanel() {
+	/* (non-Javadoc)
+	 * @see view.IBulderFrame#getPanel()
+	 */
+	@Override
+	public IBulderPanel getPanel() {
 		return bulderPanel;
 	}
 
-	public void setPanel(BulderPanel panel) {
-		this.bulderPanel = panel;
+	/* (non-Javadoc)
+	 * @see view.IBulderFrame#setPanel(view.BulderPanel)
+	 */
+	@Override
+	public void setPanel(IBulderPanel panel) {
+		this.bulderPanel = (BulderPanel) panel;
 	}
 
+	/* (non-Javadoc)
+	 * @see view.IBulderFrame#keyPressed(java.awt.event.KeyEvent)
+	 */
 	@Override
 	public void keyPressed(KeyEvent e) {
 		System.out.println(e.getKeyCode());
 	}
 
+	/* (non-Javadoc)
+	 * @see view.IBulderFrame#keyReleased(java.awt.event.KeyEvent)
+	 */
 	@Override
 	public void keyReleased(KeyEvent arg0) {
 		// TODO Auto-generated method stub
 		
 	}
 
+	/* (non-Javadoc)
+	 * @see view.IBulderFrame#keyTyped(java.awt.event.KeyEvent)
+	 */
 	@Override
 	public void keyTyped(KeyEvent arg0) {
 		// TODO Auto-generated method stub
 		
 	}
 	
-	public void setMovementController(MovementController movementController){
+	/* (non-Javadoc)
+	 * @see view.IBulderFrame#setMovementController(controller.MovementController)
+	 */
+	@Override
+	public void setMovementController(IMovementController movementController){
 		this.movementController = movementController;
 	}
 	
