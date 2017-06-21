@@ -5,6 +5,7 @@ import java.util.Observable;
 
 public class Hero extends Observable {
 	
+	private Map map;
 	private int direction;
 	private int posX;
 	private int posY;
@@ -12,18 +13,54 @@ public class Hero extends Observable {
 	private boolean aLive;
 	private Image image;
 	
-	public Hero(){
+	public Hero(Map map){
 		this.posX=1;
 		this.posY= 1 ;
 		this.direction=3;
 		this.aLive= true;
 		this.diamonds= 0;
+		this.map = map;
 	}
 	public void walkOn(){
 		
 	}
 	
 	public void move(){
+		
+		
+		
+		switch(direction){
+		
+		case 1: this.direction = 4;
+		this.map.setCellTable(6, posX-1, posY);
+		this.map.setCellTable(0, posX, posY);
+		this.setPosX(posX-1);
+		break;
+		
+		case 2: this.direction = 2;
+		this.map.setCellTable(6, posX + 1, posY);
+		this.map.setCellTable(0, posX, posY);
+		this.setPosX(posX + 1);
+		break;
+		
+		case 3: this.direction = 1;
+		this.map.setCellTable(6, posX, posY - 1);
+		this.map.setCellTable(0, posX, posY);
+		this.setPosY(posY - 1);
+		break;
+		
+		case 4: this.direction = 3;
+		this.map.setCellTable(6, posX, posY + 1);
+		this.map.setCellTable(0, posX, posY);
+		this.setPosY(posY + 1);
+		break;
+		
+		}
+		
+		
+		
+		
+		
 		
 	}
 	
