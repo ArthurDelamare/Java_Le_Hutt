@@ -30,9 +30,9 @@ public class Map implements IMap {
 		return mapObjects;
 	}
 	
-	public void CallMapTab(String content){
-		for (int y=0; y<38; y++){
-			for (int x=0; x<40; x++){
+	public void CallMapTab(String content){				Hero hero = new Hero(null);				int posHeroX = 10;		int posHeroY = 10;				/*posHeroX = hero.getPosX();		posHeroY = hero.getPosY();*/				/*A REACTIVER QUAND ON RECUPERA DES POSITIONS CORRECTES*/				System.out.println("Position X du hero" + posHeroX);		System.out.println("Position Y du hero" + posHeroY);		
+		for (int y=posHeroY-10; y<posHeroY+10; y++){
+			for (int x=posHeroX-10; x<posHeroX+10; x++){
 				this.map[x][y]= Integer.parseInt(content.substring(y*40+x, y*40+x+1));				System.out.print(this.map[x][y]);
 			}			System.out.println("");
 		}
