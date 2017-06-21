@@ -2,8 +2,12 @@ package model;
 
 import java.awt.Image;
 
-public class Diamond extends DecorWithExplosion {
+public class Diamond extends DecorWithExplosion implements IDiamond {
 	
+	/* (non-Javadoc)
+	 * @see model.IDiamond#addPoint()
+	 */
+	@Override
 	public void addPoint(){
 		
 		
