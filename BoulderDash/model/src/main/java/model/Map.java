@@ -27,4 +27,13 @@ public class Map {
 	public ArrayList<Mapeable> getMapObjects(){
 		return mapObjects;
 	}
+	
+	public void CallMapTab(String content){
+		content.split("(?!^)");
+		for (int y=0; y<38; y++){
+			for (int x=0; x<40; x++){
+				map[x][y]= Integer.parseInt(content.substring(x-1, x));
+			}
+		}
+	}
 }
