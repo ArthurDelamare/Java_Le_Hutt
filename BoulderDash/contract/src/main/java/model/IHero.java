@@ -33,5 +33,7 @@ public interface IHero {
 	Image getImage();
 
 	void setImage(Image image);
+	
+	void setHero(IHero hero);
 
 }
