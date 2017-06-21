@@ -44,13 +44,10 @@ public class ControllerFacade implements IController {
     public void start(final int id_map) throws SQLException {
         this.getView().displayMessage(this.getModel().callMapContent(id_map).toString());
 
-        final List<Example> examples = this.getModel().getAllExamples();
+
         final StringBuilder message = new StringBuilder();
         // a.append(" bar);
-        for (final Example example : examples) {
-            message.append(example);
-            message.append('\n');
-        }
+        
         this.getView().displayMessage(message.toString());
     }
 

@@ -44,14 +44,14 @@ public class HeroTest {
 
 	@Test
 	public void testGetDirection() {
-		IHero hero = new Hero();
+		IHero hero = new Hero(null);
 		int expected = 3;
 		assertEquals(expected, hero.getDirection());
 	}
 
 	@Test
 	public void testSetDirection() {
-		IHero hero = new Hero();
+		IHero hero = new Hero(null);
 		int expected = 5;
 		hero.setDirection(5);
 		assertEquals(expected, hero.getDirection());
@@ -59,7 +59,7 @@ public class HeroTest {
 
 	@Test
 	public void testGetPosX() {
-		IHero hero = new Hero();
+		IHero hero = new Hero(null);
 		
 		int expected = 1;
 		assertEquals(expected, hero.getPosX());
@@ -67,7 +67,7 @@ public class HeroTest {
 
 	@Test
 	public void testSetPosX() {
-		IHero hero = new Hero();
+		IHero hero = new Hero(null);
 		int expected = 5;
 		hero.setPosX(5);
 		assertEquals(expected, hero.getPosX());
@@ -76,7 +76,7 @@ public class HeroTest {
 
 	@Test
 	public void testGetPosY() {
-		IHero hero = new Hero();
+		IHero hero = new Hero(null);
 		
 		int expected = 1;
 		assertEquals(expected, hero.getPosY());
@@ -84,7 +84,7 @@ public class HeroTest {
 
 	@Test
 	public void testSetPosY() {
-		IHero hero = new Hero();
+		IHero hero = new Hero(null);
 		int expected = 14;
 		hero.setPosY(14);
 		assertEquals(expected, hero.getPosY());
@@ -93,14 +93,14 @@ public class HeroTest {
 
 	@Test
 	public void testGetDiamonds() {
-		IHero hero = new Hero();
+		IHero hero = new Hero(null);
 		int expected = 0;
 		assertEquals(expected, hero.getDiamonds());
 	}
 
 	@Test
 	public void testSetDiamonds() {
-		IHero hero = new Hero ();
+		IHero hero = new Hero (null);
 		int expected = 5;
 		hero.setDiamonds(5);
 		assertEquals(expected, hero.getDiamonds());
@@ -108,7 +108,7 @@ public class HeroTest {
 
 	@Test
 	public void testIsaLive() {
-		IHero hero = new Hero();
+		IHero hero = new Hero(null);
 		
 		boolean expected = true;
 		assertEquals(expected, hero.isaLive());
@@ -116,7 +116,7 @@ public class HeroTest {
 
 	@Test
 	public void testSetaLive() {
-		IHero hero = new Hero();
+		IHero hero = new Hero(null);
 		
 		boolean expected= false;
 		hero.setaLive(false);

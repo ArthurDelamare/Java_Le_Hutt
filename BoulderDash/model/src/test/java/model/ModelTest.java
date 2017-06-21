@@ -28,7 +28,7 @@ public class ModelTest {
 
 	@Test
 	public void testGetHero() {
-		IHero hero = new Hero();
+		IHero hero = new Hero(null);
 		assertNotNull(hero);
 		assertEquals(0, hero.getDiamonds());
 	}

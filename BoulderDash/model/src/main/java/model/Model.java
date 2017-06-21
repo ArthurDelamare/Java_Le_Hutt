@@ -7,7 +7,7 @@ public class Model implements IModelT {
 	
 	public Model(){
 		
-		this.hero = new Hero(map);
+		this.hero = new Hero((Map)map);
 		this.map = new Map();
 		this.map.fillMapObjects();
 		
