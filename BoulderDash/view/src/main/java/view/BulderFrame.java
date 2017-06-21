@@ -36,29 +36,38 @@ public class BulderFrame extends JFrame implements KeyListener{
 		this.bulderPanel = panel;
 	}
 
-	private BulderFrame keyManager;
-	private boolean[] keys;
-	public boolean up, down, left, right;
-	
-	keys = new boolean[256];
-	
-	public void tick(){
-		up = keys[KeyEvent.VK_UP];
-		down = keys[KeyEvent.VK_DOWN];
-		left = keys[KeyEvent.VK_LEFT];
-		right = keys[KeyEvent.VK_RIGHT];
-	}
-	
+	// Gestionnaire des touches
+		
 	@Override
 	public void keyPressed(KeyEvent e) {
-		keys[e.getKeyCode()] = true;
-		System.out.println(e.getKeyCode());
+		switch(e.getKeyCode())
+		{
+			case KeyEvent.VK_UP :
+				heros.movement_up();
+			break;
+			case KeyEvent.VK_DOWN:
+				heros.movement_down();
+			break;
+			case KeyEvent.VK_RIGHT:
+				heros.movement_right();
+			break;
+			case KeyEvent.VK_LEFT:
+				heros.movement_left();
+			break;
+		}
 	}
 
 	@Override
 	public void keyReleased(KeyEvent e) {
-		keys[e.getKeyCode()] = false;
-		
+		switch(e.getKeyCode())
+        {
+            case    KeyEvent.VK_RIGHT:
+            case    KeyEvent.VK_LEFT:
+            case    KeyEvent.VK_UP:
+            case    KeyEvent.VK_DOWN:
+                heros.stop_movement();
+            break;
+        }
 	}
 
 	@Override
