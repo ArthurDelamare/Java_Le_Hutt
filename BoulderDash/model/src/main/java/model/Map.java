@@ -4,8 +4,8 @@ import java.util.ArrayList;
 
 public class Map implements IMap {
 	private int map[][];
-	public static int widthTable = 38;
-	public static int heightTable = 40;
+	public static int widthTable = 40;
+	public static int heightTable = 38;
 	private ArrayList<Mapeable> mapObjects;	private String stringBDD;	private SpriteSheet	spriteSheet;
 	public Map(String stringBDD, SpriteSheet spriteSheet){
 		this.map = new int[widthTable][heightTable];
@@ -31,10 +31,10 @@ public class Map implements IMap {
 	}
 	
 	public void CallMapTab(String content){
-		for (int y=0; y<40; y++){
-			for (int x=0; x<38; x++){
-				this.map[x][y]= Integer.parseInt(content.substring(x, x+1));
-			}
+		for (int y=0; y<38; y++){
+			for (int x=0; x<40; x++){
+				this.map[x][y]= Integer.parseInt(content.substring(y*40+x, y*40+x+1));				System.out.print(this.map[x][y]);
+			}			System.out.println("");
 		}
 	}
 	

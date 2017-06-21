@@ -9,12 +9,12 @@ import javax.imageio.ImageIO;
 
 public class SpriteSheet implements ISpriteSheet {
 	
-	@Override
-	public BufferedImage spriteSheet(int typeOfDecors){
+	private BufferedImage wall, ground, stone, diamond, background, mob, hero;
+	
+	public SpriteSheet(){
 		
 		BufferedImage imageDecors = null;
 		BufferedImage imageHero = null;
-		BufferedImage finalImage = null;
 	
 		try {
 			try {
@@ -27,6 +27,13 @@ public class SpriteSheet implements ISpriteSheet {
 		    e.printStackTrace();
 		}
 		
+		this.wall = imageDecors.getSubimage(0,0,16,16);
+		this.ground = imageDecors.getSubimage(16,0,16,16);
+		this.stone = imageDecors.getSubimage(48,0,16,16);
+		this.diamond = imageDecors.getSubimage(64,0,16,16);
+		this.background = imageDecors.getSubimage(32,0,16,16);
+		this.mob = imageDecors.getSubimage(176,0,16,16);
+		
 		try {
 			try {
 				imageHero = ImageIO.read(new File(getClass().getResource("/textures/personnage.png").toURI()));
@@ -38,23 +45,40 @@ public class SpriteSheet implements ISpriteSheet {
 		    e.printStackTrace();
 		}
 		
+		this.hero = imageHero.getSubimage(0,0,16,16);
+		
+	}
+	
+	
+	@Override
+	public BufferedImage spriteSheet(int typeOfDecors){
+		
+		BufferedImage finalImage = null;
 		
 		switch(typeOfDecors){
 		case 0:
-			finalImage = imageDecors.getSubimage(0,0,16,16);
+			finalImage = this.wall;
+			break;
 		case 1:
-			finalImage = imageDecors.getSubimage(16,0,16,16);
+			finalImage = this.ground;
+			break;
 		case 2:
-			finalImage = imageDecors.getSubimage(48,0,16,16);
+			finalImage =  this.stone;
+			break;
 		case 3:
-			finalImage = imageDecors.getSubimage(64,0,16,16);
+			finalImage = this.diamond;
+			break;
 		case 4:
-			finalImage = imageDecors.getSubimage(32,0,16,16);
+			finalImage =  this.background;
+			break;
 		case 5:
-			finalImage = imageDecors.getSubimage(176,0,16,16);
+			finalImage =  this.mob;
+			break;
 		case 6:
-			finalImage = imageHero.getSubimage(0,0,16,16);
+			finalImage = this.hero;
+			break;
 		}
+		
 		return finalImage;
 		
 	}
