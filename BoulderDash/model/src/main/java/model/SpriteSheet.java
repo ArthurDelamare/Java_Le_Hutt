@@ -15,13 +15,13 @@ public class SpriteSheet {
 		BufferedImage finalImage = null;
 	
 		try {
-			imageDecors = ImageIO.read(new File("../textures/decors.png"));
+			imageDecors = ImageIO.read(new File("textures/decors.png"));
 		} catch (IOException e) {
 		    e.printStackTrace();
 		}
 		
 		try {
-			imageHero = ImageIO.read(new File("../textures/personnage.png"));
+			imageHero = ImageIO.read(new File("textures/personnage.png"));
 		} catch (IOException e) {
 		    e.printStackTrace();
 		}
