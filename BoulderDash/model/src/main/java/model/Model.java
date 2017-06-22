@@ -20,11 +20,14 @@ public class Model implements IModelT {
 			e.printStackTrace();
 		}
 		
+		
+		this.hero = new Hero((Map)map);
+		this.hero.setImage(this.spriteSheet.spriteSheet(6));
+		this.map.setHero(hero);
+		this.map.getHero().setImage(this.spriteSheet.spriteSheet(6));
 		this.map.CallMapTab(this.map.getStringBDD());
 		this.map.fillMapObjects();
 		
-		
-		this.hero = new Hero((Map)map);
 		
 	}
 

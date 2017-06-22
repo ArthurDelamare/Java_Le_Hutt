@@ -3,7 +3,7 @@ package model;
 import java.awt.Image;
 import java.util.Observable;
 
-public class Hero extends Observable implements IHero {
+public class Hero extends Observable implements IHero, Mapeable {
 	
 	private Map map;
 	private int direction;
@@ -170,6 +170,16 @@ public class Hero extends Observable implements IHero {
 	@Override
 	public void setImage(Image image) {
 		this.image = image;
+	}
+	@Override
+	public int[][] getMapTable() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	@Override
+	public void setMapTable(int[][] mapTable) {
+		// TODO Auto-generated method stub
+		
 	}
 	
 

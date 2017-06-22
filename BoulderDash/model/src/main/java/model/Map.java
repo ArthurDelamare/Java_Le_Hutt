@@ -26,7 +26,6 @@ public class Map implements IMap {
 	public ArrayList<Mapeable> getMapObjects(){
 		return mapObjects;
 	}
-	public void setHero(IHero hero){			}
 	public void CallMapTab(String content){		
 		for (int y=0; y<38; y++){
 			for (int x=0; x<40; x++){
@@ -47,17 +46,17 @@ public class Map implements IMap {
 		break;
 		case 4: this.mapObjects.add(new Background(posX, posY, this.spriteSheet.spriteSheet(4)));
 		break;
-		case 5: this.mapObjects.add(new Mob(posX, posY, this.spriteSheet.spriteSheet(5)));
+		case 5: this.mapObjects.add(new Mob(posX, posY, this.spriteSheet.spriteSheet(5)));				break;				case 6: this.mapObjects.add((Hero)this.getHero());
 		break;		default: this.mapObjects.add(new Mob(posX, posY, this.spriteSheet.spriteSheet(5)));
 		}
 	}
 	
 	public void fillMapObjects(){				Hero hero = new Hero(null);				int posHeroX;		int posHeroY;				this.distancePrinting = 10;				posHeroX = hero.getPosX();		posHeroY = hero.getPosY();				/*A REACTIVER QUAND ON RECUPERA DES POSITIONS CORRECTES*/				System.out.println("Position X du hero : " + posHeroX);		System.out.println("Position Y du hero : " + posHeroY);		
-		for (int i = posHeroX-this.distancePrinting; i<posHeroX+this.distancePrinting; i++){
-			for (int j = posHeroY- this.distancePrinting; j<posHeroY+ this.distancePrinting; j++){
+		for (int i = posHeroX-this.distancePrinting-1; i<posHeroX+this.distancePrinting; i++){
+			for (int j = posHeroY- this.distancePrinting; j<posHeroY+ this.distancePrinting+1; j++){
 				createObject(getCellTable(i,j),i,j);
 			}
 		}
 		System.out.println(mapObjects);
-	}	public String getStringBDD() {		return stringBDD;	}	public int getDistancePrinting() {		return distancePrinting;	}		
+	}	public String getStringBDD() {		return stringBDD;	}	public int getDistancePrinting() {		return distancePrinting;	}	public IHero getHero() {		return hero;	}	public void setHero(IHero hero) {		this.hero = (Hero)hero;	}		
 }
