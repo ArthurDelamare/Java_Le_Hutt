@@ -16,7 +16,7 @@ public class Hero extends Observable implements IHero, Mapeable {
 	public Hero(Map map){
 		this.posX = 11;
 		this.posY = 11;
-		this.direction = 3;
+		this.direction = 4;
 		this.aLive = true;
 		this.diamonds = 0;
 		this.map = map;
@@ -39,35 +39,32 @@ public class Hero extends Observable implements IHero, Mapeable {
 		
 		switch(this.direction){
 		
-		case 1: this.direction = 4;
-		this.map.setCellTable(6, posX+1, posY);
-		this.map.setCellTable(0, posX, posY);
-		System.out.println("hero --> RIGHT.");
-		this.setPosX(posX-1);
+		case 1: this.direction = 1;
+		this.map.setCellTable(6, posX, posY - 1);
+		this.map.setCellTable(1, posX, posY);
+		this.setPosY(posY - 1);
 		break;
 		
 		case 2: this.direction = 2;
 		this.map.setCellTable(6, posX + 1, posY);
-		this.map.setCellTable(0, posX, posY);
-		System.out.println("hero --> UP.");
+		this.map.setCellTable(1, posX, posY);
 		this.setPosX(posX + 1);
 		break;
 		
-		case 3: this.direction = 1;
-		this.map.setCellTable(6, posX, posY - 1);
-		this.map.setCellTable(0, posX, posY);
-		System.out.println("hero --> DOWN.");
-		this.setPosY(posY - 1);
-		break;
-		
-		case 4: this.direction = 3;
+		case 3: this.direction = 3;
 		this.map.setCellTable(6, posX, posY + 1);
-		this.map.setCellTable(0, posX, posY);
+		this.map.setCellTable(1, posX, posY);
 		this.setPosY(posY + 1);
-		System.out.println("hero --> LEFT.");
 		break;
 		
+		case 4: this.direction = 4;
+		this.map.setCellTable(6, posX, posY + 1);
+		this.map.setCellTable(1, posX, posY);
+		this.setPosY(posY + 1);
+		break;
 		}
+
+		
 		
 	}
 	
