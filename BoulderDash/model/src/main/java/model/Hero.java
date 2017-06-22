@@ -40,22 +40,23 @@ public class Hero extends Observable implements IHero, Mapeable {
 		switch(this.direction){
 		
 		case 1: this.direction = 4;
-		this.map.setCellTable(6, posX-1, posY);
+		this.map.setCellTable(6, posX+1, posY);
 		this.map.setCellTable(0, posX, posY);
+		System.out.println("hero --> RIGHT.");
 		this.setPosX(posX-1);
 		break;
 		
 		case 2: this.direction = 2;
 		this.map.setCellTable(6, posX + 1, posY);
 		this.map.setCellTable(0, posX, posY);
+		System.out.println("hero --> UP.");
 		this.setPosX(posX + 1);
-		this.setChanged();
-		this.notifyObservers();
 		break;
 		
 		case 3: this.direction = 1;
 		this.map.setCellTable(6, posX, posY - 1);
 		this.map.setCellTable(0, posX, posY);
+		System.out.println("hero --> DOWN.");
 		this.setPosY(posY - 1);
 		break;
 		
@@ -63,9 +64,7 @@ public class Hero extends Observable implements IHero, Mapeable {
 		this.map.setCellTable(6, posX, posY + 1);
 		this.map.setCellTable(0, posX, posY);
 		this.setPosY(posY + 1);
-		System.out.println("hero --> déplacement droite.");
-		this.setChanged();
-		this.notifyObservers();
+		System.out.println("hero --> LEFT.");
 		break;
 		
 		}
@@ -186,6 +185,15 @@ public class Hero extends Observable implements IHero, Mapeable {
 		// TODO Auto-generated method stub
 	}
 	
-
+	public void updatePanel(){
+		this.setChanged();
+		this.notifyObservers();
+	}
+	
+	public IMap getMap() {
+		return map;
+	}
+	
+	
 
 }

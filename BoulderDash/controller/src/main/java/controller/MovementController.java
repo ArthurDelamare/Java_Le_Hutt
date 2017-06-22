@@ -14,7 +14,9 @@ public class MovementController implements IMovementController {
 	@Override
 	public void askMoveHero(){
 		System.out.println("Mouvement détecté.");
-		this.hero.move();
 		
+		this.hero.move();
+		//this.hero.getMap().fillMapObjects();
+		this.hero.updatePanel();
 	}
 }

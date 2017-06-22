@@ -36,5 +36,9 @@ public interface IHero{
 	void setImage(Image image);
 	
 	void addObserver(Observer o);
+	
+	void updatePanel();
+	
+	IMap getMap();
 
 }
