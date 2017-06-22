@@ -23,7 +23,9 @@ public class Model implements IModelT {
 		this.map.CallMapTab(this.map.getStringBDD());
 		this.map.fillMapObjects();
 		
+		
 		this.hero = new Hero((Map)map);
+		//this.map.setHero(this.hero);
 		
 	}
 
@@ -34,6 +36,7 @@ public class Model implements IModelT {
 	public IHero getHero() {
 		return hero;
 	}
+	
 
 	/* (non-Javadoc)
 	 * @see model.IModel#getMap()

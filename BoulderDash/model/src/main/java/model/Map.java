@@ -6,7 +6,7 @@ public class Map implements IMap {
 	private int map[][];
 	public static int widthTable = 40;
 	public static int heightTable = 38;
-	private ArrayList<Mapeable> mapObjects;	private String stringBDD;	private SpriteSheet	spriteSheet;
+	private ArrayList<Mapeable> mapObjects;	private String stringBDD;	private SpriteSheet	spriteSheet;	private Hero hero;
 	public Map(String stringBDD, SpriteSheet spriteSheet){
 		this.map = new int[widthTable][heightTable];
 		this.mapObjects = new ArrayList<Mapeable>();		this.stringBDD = stringBDD;		this.spriteSheet = spriteSheet;		System.out.println(stringBDD);
@@ -29,8 +29,8 @@ public class Map implements IMap {
 	public ArrayList<Mapeable> getMapObjects(){
 		return mapObjects;
 	}
-	
-	public void CallMapTab(String content){
+	public void setHero(IHero hero){			}
+	public void CallMapTab(String content){		
 		for (int y=0; y<38; y++){
 			for (int x=0; x<40; x++){
 				this.map[x][y]= Integer.parseInt(content.substring(y*40+x, y*40+x+1));				System.out.print(this.map[x][y]);
@@ -55,9 +55,9 @@ public class Map implements IMap {
 		}
 	}
 	
-	public void fillMapObjects(){
-		for (int i = 0; i<Map.widthTable; i++){
-			for (int j = 0; j<Map.heightTable; j++){
+	public void fillMapObjects(){				Hero hero = new Hero(null);				int posHeroX = 15;		int posHeroY = 15;				int DistancePrinting = 10;				posHeroX = hero.getPosX();		posHeroY = hero.getPosY();				/*A REACTIVER QUAND ON RECUPERA DES POSITIONS CORRECTES*/				System.out.println("Position X du hero" + posHeroX);		System.out.println("Position Y du hero" + posHeroY);		
+		for (int i = posHeroX-DistancePrinting; i<posHeroX+DistancePrinting; i++){
+			for (int j = posHeroY-DistancePrinting; j<posHeroY+DistancePrinting; j++){
 				createObject(getCellTable(i,j),i,j);
 			}
 		}
