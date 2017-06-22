@@ -44,11 +44,6 @@ public class ControllerFacade implements IController {
     public void start(final int id_map) throws SQLException {
         this.getView().displayMessage(this.getModel().callMapContent(id_map).toString());
 
-
-        final StringBuilder message = new StringBuilder();
-        // a.append(" bar);
-        
-        this.getView().displayMessage(message.toString());
     }
 
     /**
