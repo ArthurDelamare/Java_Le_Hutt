@@ -17,5 +17,7 @@ public interface IMap {
 	void CallMapTab(String content);
 	
 	String getStringBDD();
+	
+	void setHero(IHero hero);
 
 }
