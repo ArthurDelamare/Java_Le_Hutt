@@ -25,7 +25,6 @@ public class Model implements IModelT {
 		
 		
 		this.hero = new Hero((Map)map);
-		//this.map.setHero(this.hero);
 		
 	}
 

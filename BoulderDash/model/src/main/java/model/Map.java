@@ -48,7 +48,7 @@ public class Map implements IMap {
 		case 4: this.mapObjects.add(new Background(posX, posY, this.spriteSheet.spriteSheet(4)));
 		break;
 		case 5: this.mapObjects.add(new Mob(posX, posY, this.spriteSheet.spriteSheet(5)));
-		break;		default: this.mapObjects.add(new Ground(posX, posY, this.spriteSheet.spriteSheet(1), this.map));
+		break;		default: this.mapObjects.add(new Mob(posX, posY, this.spriteSheet.spriteSheet(5)));
 		}
 	}
 	
