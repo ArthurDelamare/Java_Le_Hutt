@@ -1,5 +1,7 @@
 package view;
 
+import java.awt.Image;
+import java.awt.Toolkit;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
@@ -13,19 +15,19 @@ public class BulderFrame extends JFrame implements KeyListener, IBulderFrame{
 	private BulderPanel bulderPanel;
 	private IMovementController movementController;
 	
-	public BulderFrame(BulderPanel bulderPanel){
+	public BulderFrame(){
 			
-		this.bulderPanel = bulderPanel;
+		this.bulderPanel = new BulderPanel();
 		
 		this.setTitle("BulderDash");
-		this.setSize(650, 645);
+		this.setSize(500, 500);
 		this.setLocationRelativeTo(null);
 		this.setContentPane(bulderPanel);
 		
 		this.addKeyListener(this);
-		
 		this.setVisible(true);
-		
+		Image icon = Toolkit.getDefaultToolkit().getImage("iconjeu.png");
+	    this.setIconImage(icon);
 	}
 
 	/* (non-Javadoc)
@@ -80,7 +82,3 @@ public class BulderFrame extends JFrame implements KeyListener, IBulderFrame{
 	
 }
 
-
-import java.awt.event.KeyEvent;
-
-	private BulderPanel bulderPanel;
