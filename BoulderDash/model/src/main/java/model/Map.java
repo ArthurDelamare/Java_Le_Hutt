@@ -52,7 +52,7 @@ public class Map implements IMap {
 		}
 	}
 	
-	public void fillMapObjects(){				Hero hero = new Hero(null);				int posHeroX = 15;		int posHeroY = 15;				int DistancePrinting = 10;				posHeroX = hero.getPosX();		posHeroY = hero.getPosY();				/*A REACTIVER QUAND ON RECUPERA DES POSITIONS CORRECTES*/				System.out.println("Position X du hero" + posHeroX);		System.out.println("Position Y du hero" + posHeroY);		
+	public void fillMapObjects(){				Hero hero = new Hero(null);				int posHeroX = 15;		int posHeroY = 15;				int DistancePrinting = 10;				posHeroX = hero.getPosX();		posHeroY = hero.getPosY();				/*A REACTIVER QUAND ON RECUPERA DES POSITIONS CORRECTES*/				System.out.println("Position X du hero : " + posHeroX);		System.out.println("Position Y du hero : " + posHeroY);		
 		for (int i = posHeroX-DistancePrinting; i<posHeroX+DistancePrinting; i++){
 			for (int j = posHeroY-DistancePrinting; j<posHeroY+DistancePrinting; j++){
 				createObject(getCellTable(i,j),i,j);
