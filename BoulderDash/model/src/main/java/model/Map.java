@@ -6,7 +6,7 @@ public class Map implements IMap {
 	private int map[][];
 	public static int widthTable = 40;
 	public static int heightTable = 38;
-	private ArrayList<Mapeable> mapObjects;	private String stringBDD;	private SpriteSheet	spriteSheet;	private Hero hero;
+	private ArrayList<Mapeable> mapObjects;	private String stringBDD;	private SpriteSheet	spriteSheet;	private Hero hero;	private int distancePrinting;
 	public Map(String stringBDD, SpriteSheet spriteSheet){
 		this.map = new int[widthTable][heightTable];
 		this.mapObjects = new ArrayList<Mapeable>();		this.stringBDD = stringBDD;		this.spriteSheet = spriteSheet;		System.out.println(stringBDD);
@@ -52,12 +52,12 @@ public class Map implements IMap {
 		}
 	}
 	
-	public void fillMapObjects(){				Hero hero = new Hero(null);				int posHeroX;		int posHeroY;				int DistancePrinting = 10;				posHeroX = hero.getPosX();		posHeroY = hero.getPosY();				/*A REACTIVER QUAND ON RECUPERA DES POSITIONS CORRECTES*/				System.out.println("Position X du hero : " + posHeroX);		System.out.println("Position Y du hero : " + posHeroY);		
-		for (int i = posHeroX-DistancePrinting; i<posHeroX+DistancePrinting; i++){
-			for (int j = posHeroY-DistancePrinting; j<posHeroY+DistancePrinting; j++){
+	public void fillMapObjects(){				Hero hero = new Hero(null);				int posHeroX;		int posHeroY;				this.distancePrinting = 10;				posHeroX = hero.getPosX();		posHeroY = hero.getPosY();				/*A REACTIVER QUAND ON RECUPERA DES POSITIONS CORRECTES*/				System.out.println("Position X du hero : " + posHeroX);		System.out.println("Position Y du hero : " + posHeroY);		
+		for (int i = posHeroX-this.distancePrinting; i<posHeroX+this.distancePrinting; i++){
+			for (int j = posHeroY- this.distancePrinting; j<posHeroY+ this.distancePrinting; j++){
 				createObject(getCellTable(i,j),i,j);
 			}
 		}
 		System.out.println(mapObjects);
-	}	public String getStringBDD() {		return stringBDD;	}		
+	}	public String getStringBDD() {		return stringBDD;	}	public int getDistancePrinting() {		return distancePrinting;	}		
 }
