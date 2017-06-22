@@ -32,7 +32,7 @@ public class SpriteSheet implements ISpriteSheet {
 		this.stone = imageDecors.getSubimage(48,0,16,16);
 		this.diamond = imageDecors.getSubimage(64,0,16,16);
 		this.background = imageDecors.getSubimage(32,0,16,16);
-		this.mob = imageDecors.getSubimage(176,0,16,16);
+		this.mob = imageDecors.getSubimage(144,0,16,16);
 		
 		try {
 			try {
