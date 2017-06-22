@@ -14,7 +14,7 @@ public class Controller implements IController{
 	public Controller(IView view, IModelT model) throws SQLException{
 		this.view = view;
 		this.model = model;
-		this.movementController = new MovementController();
+		this.movementController = new MovementController(this.model.getHero());
 		this.view.getGraphicsBuilder().setMap(this.model.getMap());
 		this.view.run();
 		this.view.getBulderFrame().setMovementController(movementController);

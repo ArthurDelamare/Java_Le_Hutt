@@ -1,16 +1,20 @@
 package controller;
 
+import model.IHero;
+
 public class MovementController implements IMovementController {
 	
-	public MovementController(){
-		
+	private IHero hero;
+	
+	public MovementController(IHero hero){
+		this.hero = hero;
 	}
 	
-	/* (non-Javadoc)
-	 * @see controller.IMovementController#askMoveHero()
-	 */
+	
 	@Override
 	public void askMoveHero(){
-		System.out.println("test");
+		System.out.println("Mouvement détecté.");
+		this.hero.move();
+		
 	}
 }
