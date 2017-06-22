@@ -15,7 +15,7 @@ public class Model implements IModelT {
 		this.spriteSheet = new SpriteSheet();
 		
 		try {
-			this.map = new Map(callMapContent(2), spriteSheet);
+			this.map = new Map(callMapContent(1), spriteSheet);
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}

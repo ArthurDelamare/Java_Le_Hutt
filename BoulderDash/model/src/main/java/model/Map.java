@@ -10,9 +10,6 @@ public class Map implements IMap {
 	public Map(String stringBDD, SpriteSheet spriteSheet){
 		this.map = new int[widthTable][heightTable];
 		this.mapObjects = new ArrayList<Mapeable>();		this.stringBDD = stringBDD;		this.spriteSheet = spriteSheet;		System.out.println(stringBDD);
-		this.setCellTable(0, 0, 0);
-		this.setCellTable(1, 0, 1);
-		this.setCellTable(2, 0, 2);
 	}
 	
 	@Override
