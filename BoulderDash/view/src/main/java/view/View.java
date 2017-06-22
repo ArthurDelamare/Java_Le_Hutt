@@ -53,6 +53,8 @@ public class View implements IView {
 		return graphicsBuilder;
 	}
 	
-	
+	public IBulderPanel getBulderPanel(){
+		return this.bulderPanel;
+	}
 	
 }

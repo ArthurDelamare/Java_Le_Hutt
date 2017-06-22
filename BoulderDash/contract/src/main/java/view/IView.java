@@ -10,5 +10,6 @@ public interface IView {
 	void setBulderFrame(IBulderFrame bulderFrame);
 	void setMap(IMap map);
 	IGraphicsBuilder getGraphicsBuilder();
+	IBulderPanel getBulderPanel();
 	
 }
