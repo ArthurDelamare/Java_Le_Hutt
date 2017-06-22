@@ -14,9 +14,8 @@ public class GraphicsBuilder implements IGraphicsBuilder {
 	
 	@Override
 	public void applyDrawTographics(Graphics g){
-		System.out.println("I BELIEVE IN IT: " + this.map.getMapObjects());
 		for(int i = 0; i<this.map.getMapObjects().size(); i++){
-			g.drawImage(this.map.getMapObjects().get(i).getImage(), (this.map.getMapObjects().get(i).getPosX())*32, (this.map.getMapObjects().get(i).getPosY())*32, 32, 32, null);
+			g.drawImage(this.map.getMapObjects().get(i).getImage(), (this.map.getMapObjects().get(i).getPosX())*32 - this.map.getMapObjects().get(0).getPosX()*32, (this.map.getMapObjects().get(i).getPosY())*32 - this.map.getMapObjects().get(0).getPosY()*32, 32, 32, null);
 		}
 		//g.drawImage(this.map.getMapObjects().get(0).getImage(), this.map.getMapObjects().get(0).getPosX(), this.map.getMapObjects().get(0).getPosY(), null);
 	}

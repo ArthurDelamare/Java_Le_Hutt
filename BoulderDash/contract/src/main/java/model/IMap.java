@@ -19,5 +19,9 @@ public interface IMap {
 	String getStringBDD();
 	
 	void setHero(IHero hero);
+	
+	int getDistancePrinting();
+	
+	
 
 }

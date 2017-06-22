@@ -14,8 +14,8 @@ public class Hero extends Observable implements IHero {
 	private Image image;
 	
 	public Hero(Map map){
-		this.posX = 15;
-		this.posY = 15;
+		this.posX = 25;
+		this.posY = 25;
 		this.direction = 3;
 		this.aLive = true;
 		this.diamonds = 0;
