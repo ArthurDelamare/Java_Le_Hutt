@@ -39,7 +39,8 @@ public class Hero extends Observable implements IHero, Mapeable {
 		
 		switch(this.direction){
 		
-		case 1: this.direction = 1;
+		case 1: 
+		this.direction = 1;
 		this.map.setCellTable(6, posX, posY - 1);
 		this.map.setCellTable(4, posX, posY);
 		this.setPosY(posY - 1);
