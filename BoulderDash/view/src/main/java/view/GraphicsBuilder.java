@@ -1,6 +1,6 @@
 package view;
 
-import java.awt.Color;import java.awt.Font;import java.awt.Graphics;import javax.swing.JLabel;import model.IMap;
+import java.awt.Color;import java.awt.Font;import java.awt.Graphics;import model.IMap;
 
 public class GraphicsBuilder implements IGraphicsBuilder {
 	
