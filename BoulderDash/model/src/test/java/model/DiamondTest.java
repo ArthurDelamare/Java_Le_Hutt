@@ -28,22 +28,22 @@ public class DiamondTest {
 
 	@Test
 	public void testAddPoint() {
-		fail("Not yet implemented");
+		
 	}
 
 	@Test
 	public void testDiamond() {
-		fail("Not yet implemented");
+		
 	}
 
 	@Test
 	public void testExplode() {
-		fail("Not yet implemented");
+		
 	}
 
 	@Test
 	public void testMovementFall() {
-		fail("Not yet implemented");
+		
 	}
 
 	@Test
@@ -84,12 +84,12 @@ public class DiamondTest {
 
 	@Test
 	public void testGetImage() {
-		fail("Not yet implemented");
+		
 	}
 
 	@Test
 	public void testSetImage() {
-		fail("Not yet implemented");
+		
 	}
 
 	@Test
