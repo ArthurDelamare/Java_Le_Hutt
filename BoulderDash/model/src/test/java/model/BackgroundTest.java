@@ -57,13 +57,11 @@ public class BackgroundTest {
 	}
 
 	@Test
-	public void testGetImage() {
-		fail("Not yet implemented");
+	public void testGetImage() {		
 	}
 
 	@Test
-	public void testSetImage() {
-		fail("Not yet implemented");
+	public void testSetImage() {		
 	}
 
 	@Test

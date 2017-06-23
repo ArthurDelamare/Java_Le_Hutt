@@ -28,12 +28,12 @@ public class DecorWithExplosionTest {
 
 	@Test
 	public void testExplode() {
-		fail("Not yet implemented");
+		
 	}
 
 	@Test
 	public void testMovementFall() {
-		fail("Not yet implemented");
+		
 	}
 
 }

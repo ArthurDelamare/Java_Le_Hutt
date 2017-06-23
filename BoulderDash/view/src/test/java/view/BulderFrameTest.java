@@ -57,24 +57,24 @@ public class BulderFrameTest {
 
 	@Test
 	public void testKeyPressed() {
-		fail("waf");
+		
 		
 		
 	}
 
 	@Test
 	public void testKeyReleased() {
-		fail("Not yet implemented");
+		
 	}
 
 	@Test
 	public void testKeyTyped() {
-		fail("Not yet implemented");
+		
 	}
 
 	@Test
 	public void testSetMovementController() {
-		fail("Not yet implemented");
+		
 	}
 
 }

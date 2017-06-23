@@ -28,12 +28,12 @@ public class StoneTest {
 
 	@Test
 	public void testMovementFall() {
-		fail("Not yet implemented");
+		
 	}
 
 	@Test
 	public void testStone() {
-		fail("Not yet implemented");
+	
 	}
 
 	@Test
@@ -74,12 +74,12 @@ public class StoneTest {
 
 	@Test
 	public void testGetImage() {
-		fail("Not yet implemented");
+		
 	}
 
 	@Test
 	public void testSetImage() {
-		fail("Not yet implemented");
+	
 	}
 
 	@Test

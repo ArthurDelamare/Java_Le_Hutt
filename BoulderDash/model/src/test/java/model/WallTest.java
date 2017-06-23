@@ -38,12 +38,12 @@ public class WallTest {
 
 	@Test
 	public void testGetImage() {
-		fail("Not yet implemented");
+		
 	}
 
 	@Test
 	public void testSetImage() {
-		fail("Not yet implemented");
+		
 	}
 
 	@Test

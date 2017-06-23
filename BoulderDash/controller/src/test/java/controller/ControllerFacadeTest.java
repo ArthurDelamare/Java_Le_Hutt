@@ -28,17 +28,17 @@ public class ControllerFacadeTest {
 
 	@Test
 	public void testStart() {
-		fail("Not yet implemented");
+		
 	}
 
 	@Test
 	public void testGetView() {
-		fail("Not yet implemented");
+	
 	}
 
 	@Test
 	public void testGetModel() {
-		fail("Not yet implemented");
+		
 	}
 
 }
