@@ -28,18 +28,8 @@ public abstract class Main {
      *            the arguments
      */
 	
-    public static void main(final String[] args) {
-        final ControllerFacade controller = new ControllerFacade(new ViewFacade(), new ModelFacade());
-
+    public static void main(final String[] args) {    	    	final IModelT model = new Model();
         final IView view = new View();
-        final IModelT model = new Model();
-        final IController controllerM = new Controller(view, model);
-        
-        try {
-            controller.start(5);
-        } catch (final SQLException exception) {
-            exception.printStackTrace();
-        }
+        try {        				final IController controller = new Controller(view, model);					} catch (SQLException e) {			// TODO Auto-generated catch block			e.printStackTrace();		}
     }
-
 }

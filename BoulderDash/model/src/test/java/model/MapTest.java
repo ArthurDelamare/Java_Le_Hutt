@@ -30,7 +30,7 @@ public class MapTest {
 
 	@Test
 	public void testGetCellTable() {
-		IMap map = new Map();
+		IMap map = new Map(null, null);
 		map.setCellTable(6, 5, 12);
 		int expected = 6;
 		assertEquals(expected, map.getCellTable(5, 12));
@@ -38,7 +38,7 @@ public class MapTest {
 
 	@Test
 	public void testSetCellTable() {
-		IMap map = new Map();
+		IMap map = new Map(null, null);
 		int expected = 4;
 		map.setCellTable(4, 12, 8);
 		assertEquals(expected, map.getCellTable(12, 8));
@@ -46,7 +46,7 @@ public class MapTest {
 
 	@Test
 	public void testGetMapObjects() {
-		IMap map = new Map();
+		IMap map = new Map(null, null);
 		assertNotNull(map);
 	}
 

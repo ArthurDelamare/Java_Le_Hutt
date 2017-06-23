@@ -3,7 +3,7 @@ package model;
 import java.awt.Image;
 import java.util.Observable;
 
-public class Hero extends Observable implements IHero {
+public class Hero extends Observable implements IHero, Mapeable {
 	
 	private Map map;
 	private int direction;
@@ -14,11 +14,11 @@ public class Hero extends Observable implements IHero {
 	private Image image;
 	
 	public Hero(Map map){
-		this.posX=1;
-		this.posY= 1 ;
-		this.direction=3;
-		this.aLive= true;
-		this.diamonds= 0;
+		this.posX = 11;
+		this.posY = 11;
+		this.direction = 4;
+		this.aLive = true;
+		this.diamonds = 0;
 		this.map = map;
 	}
 	/* (non-Javadoc)
@@ -37,33 +37,34 @@ public class Hero extends Observable implements IHero {
 		
 		
 		
-		switch(direction){
+		switch(this.direction){
 		
-		case 1: this.direction = 4;
-		this.map.setCellTable(6, posX-1, posY);
-		this.map.setCellTable(0, posX, posY);
-		this.setPosX(posX-1);
+		case 1: this.direction = 1;
+		this.map.setCellTable(6, posX, posY - 1);
+		this.map.setCellTable(4, posX, posY);
+		this.setPosY(posY - 1);
 		break;
 		
 		case 2: this.direction = 2;
 		this.map.setCellTable(6, posX + 1, posY);
-		this.map.setCellTable(0, posX, posY);
+		this.map.setCellTable(4, posX, posY);
 		this.setPosX(posX + 1);
 		break;
 		
-		case 3: this.direction = 1;
-		this.map.setCellTable(6, posX, posY - 1);
-		this.map.setCellTable(0, posX, posY);
-		this.setPosY(posY - 1);
-		break;
-		
-		case 4: this.direction = 3;
+		case 3: this.direction = 3;
 		this.map.setCellTable(6, posX, posY + 1);
-		this.map.setCellTable(0, posX, posY);
+		this.map.setCellTable(4, posX, posY);
 		this.setPosY(posY + 1);
 		break;
 		
+		case 4: this.direction = 4;
+		this.map.setCellTable(6, posX - 1, posY);
+		this.map.setCellTable(4, posX, posY);
+		this.setPosX(posX - 1);
+		break;
 		}
+
+		
 		
 	}
 	
@@ -170,6 +171,24 @@ public class Hero extends Observable implements IHero {
 	@Override
 	public void setImage(Image image) {
 		this.image = image;
+	}
+	@Override
+	public int[][] getMapTable() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	@Override
+	public void setMapTable(int[][] mapTable) {
+		// TODO Auto-generated method stub
+	}
+	
+	public void updatePanel(){
+		this.setChanged();
+		this.notifyObservers();
+	}
+	
+	public IMap getMap() {
+		return map;
 	}
 	
 	
