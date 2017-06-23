@@ -1,5 +1,7 @@
 package controller;
 
+import javax.swing.JOptionPane;
+
 import model.IHero;
 
 public class MovementController implements IMovementController {
@@ -10,26 +12,40 @@ public class MovementController implements IMovementController {
 		this.hero = hero;
 	}
 	
-	private void callMovement(int sens){
-			if (this.hero.getMap().getCellTable((this.hero.getPosX()-1), (this.hero.getPosY())) == 3 && sens == 4){
-			
-			this.hero.setDiamonds(this.hero.getDiamonds()+1);
-			System.out.println("nombre de diamands : " + this.hero.getDiamonds());
+	private void endOfGame(){
+		JOptionPane.showMessageDialog(null, "You met a monster, you died...", "Error",
+        JOptionPane.ERROR_MESSAGE);
+		System.exit(1);
+	}
+	
+	private Boolean searchAroundHero(int sens, int typeObject){
+		Boolean exist = false;
+		switch (sens){
+		case 1 :
+			if (this.hero.getMap().getCellTable((this.hero.getPosX()), (this.hero.getPosY()-1)) == typeObject) exist=true;
+			break;
+		case 2 :
+			if (this.hero.getMap().getCellTable((this.hero.getPosX()+1), (this.hero.getPosY())) == typeObject) exist=true;
+			break;
+		case 3 :
+			if (this.hero.getMap().getCellTable((this.hero.getPosX()), (this.hero.getPosY()+1)) == typeObject) exist=true;
+			break;
+		case 4 :
+			if (this.hero.getMap().getCellTable((this.hero.getPosX()-1), (this.hero.getPosY())) == typeObject) exist=true;
+			break;
 		}
-			if (this.hero.getMap().getCellTable((this.hero.getPosX()), (this.hero.getPosY()+1)) == 3 && sens == 3){
-				
+		
+		
+		return exist;
+	}
+	
+	private void callMovement(int sens){
+			if (this.searchAroundHero(sens, 3)==true) {
 				this.hero.setDiamonds(this.hero.getDiamonds()+1);
-				System.out.println("nombre de diamands : " + this.hero.getDiamonds());
+				System.out.println("Dimands : "+ this.hero.getDiamonds());
 			}
-			if (this.hero.getMap().getCellTable((this.hero.getPosX()+1), (this.hero.getPosY())) == 3 && sens == 2){
-				
-				this.hero.setDiamonds(this.hero.getDiamonds()+1);
-				System.out.println("nombre de diamands : " + this.hero.getDiamonds());
-			}
-			if (this.hero.getMap().getCellTable((this.hero.getPosX()), (this.hero.getPosY()-1)) == 3 && sens == 1){
-				
-				this.hero.setDiamonds(this.hero.getDiamonds()+1);
-				System.out.println("nombre de diamands : " + this.hero.getDiamonds());
+			if (this.searchAroundHero(sens, 5)==true) {
+				this.endOfGame();
 			}
 			
 		this.hero.setDirection(sens);
@@ -46,16 +62,16 @@ public class MovementController implements IMovementController {
 		
 		
 		
-		if(keyCode == 90 && (this.hero.getMap().getCellTable(this.hero.getPosX(), (this.hero.getPosY())-1) != 0) && (this.hero.getMap().getCellTable(this.hero.getPosX(), (this.hero.getPosY())-1) != 5)) {
+		if(keyCode == 90 && (this.hero.getMap().getCellTable(this.hero.getPosX(), (this.hero.getPosY())-1) != 0)/* && (this.hero.getMap().getCellTable(this.hero.getPosX(), (this.hero.getPosY())-1) != 5)*/) {
 			this.callMovement(1);
 		}
-		else if(keyCode == 68 && (this.hero.getMap().getCellTable((this.hero.getPosX())+1, (this.hero.getPosY())) != 0) && (this.hero.getMap().getCellTable((this.hero.getPosX())+1, (this.hero.getPosY())) != 5) ) {
+		else if(keyCode == 68 && (this.hero.getMap().getCellTable((this.hero.getPosX())+1, (this.hero.getPosY())) != 0) /*&& (this.hero.getMap().getCellTable((this.hero.getPosX())+1, (this.hero.getPosY())) != 5)*/) {
 			this.callMovement(2);
 		}
-		else if(keyCode == 83 && (this.hero.getMap().getCellTable(this.hero.getPosX(), (this.hero.getPosY())+1) != 0) && (this.hero.getMap().getCellTable(this.hero.getPosX(), (this.hero.getPosY())+1) != 5)) {
+		else if(keyCode == 83 && (this.hero.getMap().getCellTable(this.hero.getPosX(), (this.hero.getPosY())+1) != 0) /*&& (this.hero.getMap().getCellTable(this.hero.getPosX(), (this.hero.getPosY())+1) != 5)*/) {
 			this.callMovement(3);
 		}
-		else if(keyCode == 81 && (this.hero.getMap().getCellTable((this.hero.getPosX())-1, (this.hero.getPosY())) != 0) && (this.hero.getMap().getCellTable((this.hero.getPosX())-1, (this.hero.getPosY())) != 5)) {
+		else if(keyCode == 81 && (this.hero.getMap().getCellTable((this.hero.getPosX())-1, (this.hero.getPosY())) != 0) /*&& (this.hero.getMap().getCellTable((this.hero.getPosX())-1, (this.hero.getPosY())) != 5)*/) {
 			this.callMovement(4);
 		}
 		
