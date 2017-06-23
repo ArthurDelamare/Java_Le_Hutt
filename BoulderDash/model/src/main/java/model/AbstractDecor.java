@@ -5,6 +5,12 @@ package model;
  
 import java.awt.Image;
 
+/**
+ * <h1> AbstractDecor is the abstract class inherited by the decors </h1>.
+ * @author Lesourd Gabriel (leader), Delamare Arthur, Morlet Antoine, Billis Enzo
+ * @version 1.0
+ */ 
+
 public abstract class AbstractDecor implements Mapeable, IAbstractDecor {
 	
 	protected int PosX;
@@ -14,43 +20,21 @@ public abstract class AbstractDecor implements Mapeable, IAbstractDecor {
 	protected boolean blocker;
 	protected int mapTable[][];
 	
-	/* (non-Javadoc)
-	 * @see model.Mapeable#getPosX()
-	 */
-	/* (non-Javadoc)
-	 * @see model.IAbstractDecor#getPosX()
-	 */
 	@Override
 	public int getPosX() {
 		return PosX;
 	}
-	/* (non-Javadoc)
-	 * @see model.Mapeable#setPosX(int)
-	 */
-	/* (non-Javadoc)
-	 * @see model.IAbstractDecor#setPosX(int)
-	 */
+	
 	@Override
 	public void setPosX(int posX) {
 		PosX = posX;
 	}
 	
-	/* (non-Javadoc)
-	 * @see model.Mapeable#getPosY()
-	 */
-	/* (non-Javadoc)
-	 * @see model.IAbstractDecor#getPosY()
-	 */
 	@Override
 	public int getPosY() {
 		return PosY;
 	}
-	/* (non-Javadoc)
-	 * @see model.Mapeable#setPosY(int)
-	 */
-	/* (non-Javadoc)
-	 * @see model.IAbstractDecor#setPosY(int)
-	 */
+
 	@Override
 	public void setPosY(int posY) {
 		PosY = posY;
@@ -66,12 +50,7 @@ public abstract class AbstractDecor implements Mapeable, IAbstractDecor {
 	public Image getImage() {
 		return image;
 	}
-	/* (non-Javadoc)
-	 * @see model.Mapeable#setImage(java.awt.Image)
-	 */
-	/* (non-Javadoc)
-	 * @see model.IAbstractDecor#setImage(java.awt.Image)
-	 */
+
 	@Override
 	public void setImage(Image image) {
 		this.image = image;
@@ -85,22 +64,24 @@ public abstract class AbstractDecor implements Mapeable, IAbstractDecor {
 		return breakable;
 	}
 	
-	/* (non-Javadoc)
-	 * @see model.IAbstractDecor#isBlocker()
+	/**
+	 * <h2> A Method that defines if the boolean blocker is true or false  </h2>
 	 */
 	@Override
 	public boolean isBlocker() {
 		return blocker;
 	}
-	/* (non-Javadoc)
-	 * @see model.IAbstractDecor#getMapTable()
+
+	/**
+	 * <h2> A Method that defines MapTable  </h2>
 	 */
 	@Override
 	public int[][] getMapTable() {
 		return mapTable;
 	}
-	/* (non-Javadoc)
-	 * @see model.IAbstractDecor#setMapTable(int[][])
+
+	/**
+	 * <h2> A Method that sets MapTable  </h2>
 	 */
 	@Override
 	public void setMapTable(int[][] mapTable) {

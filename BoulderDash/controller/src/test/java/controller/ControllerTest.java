@@ -28,7 +28,7 @@ public class ControllerTest {
 
 	@Test
 	public void testController() {
-		fail("Not yet implemented");
+		
 	}
 
 }

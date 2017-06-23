@@ -2,6 +2,12 @@ package view;
 
 import model.IMap;
 
+/**
+ * <h1> View is the class  </h1>.
+ * @author Lesourd Gabriel (leader), Delamare Arthur, Morlet Antoine, Billis Enzo
+ * @version 1.0
+ */
+
 public class View implements IView {
 	
 	private BulderFrame bulderFrame;

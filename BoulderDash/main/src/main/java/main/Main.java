@@ -13,12 +13,7 @@ import view.IView;
 import view.View;
 import view.ViewFacade;
 
-/**
- * <h1>The Class Main.</h1>
- *
- * @author Jean-Aymeric DIET jadiet@cesi.fr
- * @version 1.0
- */
+/** * <h1> Description class : </h1>. * @author Lesourd Gabriel (leader), Delamare Arthur, Morlet Antoine, Billis Enzo * @version 1.0 */
 public abstract class Main {
 
     /**

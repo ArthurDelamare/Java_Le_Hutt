@@ -4,6 +4,12 @@ import java.sql.SQLException;
 
 import model.dao.ExampleDAO;
 
+/**
+ * <h1> Model is the class which manages the different classes of the Model as Map or Heros.</h1>.
+ * @author Lesourd Gabriel (leader), Delamare Arthur, Morlet Antoine, Billis Enzo
+ * @version 1.0
+ */ 
+
 public class Model implements IModelT {
 	
 	private IHero hero;
@@ -15,7 +21,7 @@ public class Model implements IModelT {
 		this.spriteSheet = new SpriteSheet();
 		
 		try {
-			this.map = new Map(callMapContent(1), spriteSheet);
+			this.map = new Map(callMapContent(5), spriteSheet);
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
@@ -31,23 +37,24 @@ public class Model implements IModelT {
 		
 	}
 
-	/* (non-Javadoc)
-	 * @see model.IModel#getHero()
+	/**
+	 * <h2> A Method that defines  </h2>
 	 */
-	
 	public IHero getHero() {
 		return hero;
 	}
 	
 
-	/* (non-Javadoc)
-	 * @see model.IModel#getMap()
+	/**
+	 * <h2> A Method that defines  </h2>
 	 */
-	
 	public IMap getMap() {
 		return map;
 	}
 	
+	/**
+	 * <h2> A Method that defines  </h2>
+	 */
 	public String callMapContent(final int id) throws SQLException {
         return ExampleDAO.callMapContent(id);
     }
