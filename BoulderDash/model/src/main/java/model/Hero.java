@@ -3,6 +3,11 @@ package model;
 import java.awt.Image;
 import java.util.Observable;
 
+/**
+ * <h1> Hero is the class who give the position, the state alive, the nomber of Diamonds and the Image of Hero </h1>. </h1>.
+ * @author Lesourd Gabriel (leader), Delamare Arthur, Morlet Antoine, Billis Enzo
+ * @version 1.0
+ */ 
 public class Hero extends Observable implements IHero, Mapeable {
 	
 	private Map map;

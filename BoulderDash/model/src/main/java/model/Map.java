@@ -1,12 +1,12 @@
 package model;
 
 import java.util.ArrayList;
-
+/** * <h1> Map is the class which manages the painting and the decorations </h1>.</h1>. * @author Lesourd Gabriel (leader), Delamare Arthur, Morlet Antoine, Billis Enzo * @version 1.0 */ 
 public class Map implements IMap {
 	private int map[][];
 	public static int widthTable = 40;
 	public static int heightTable = 38;
-	private ArrayList<Mapeable> mapObjects;	private String stringBDD;	private SpriteSheet	spriteSheet;	private Hero hero;	private int distancePrinting;
+	private ArrayList<Mapeable> mapObjects;	private String stringBDD;	private SpriteSheet	spriteSheet;	private Hero hero;	private int distancePrinting;	/**	 * <h2> A Constructor that defines  </h2>	 */
 	public Map(String stringBDD, SpriteSheet spriteSheet){
 		this.map = new int[widthTable][heightTable];
 		this.mapObjects = new ArrayList<Mapeable>();		this.stringBDD = stringBDD;		this.spriteSheet = spriteSheet;

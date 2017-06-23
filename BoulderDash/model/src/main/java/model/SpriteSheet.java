@@ -7,10 +7,19 @@ import java.net.URISyntaxException;
 
 import javax.imageio.ImageIO;
 
+/**
+ * <h1> SpriteSheet is the class </h1>.
+ * @author Lesourd Gabriel (leader), Delamare Arthur, Morlet Antoine, Billis Enzo
+ * @version 1.0
+ */ 
+
 public class SpriteSheet implements ISpriteSheet {
 	
 	private BufferedImage wall, ground, stone, diamond, background, mob, hero;
 	
+	/**
+	 * <h2> A Method that defines  </h2>
+	 */
 	public SpriteSheet(){
 		
 		BufferedImage imageDecors = null;
@@ -49,7 +58,9 @@ public class SpriteSheet implements ISpriteSheet {
 		
 	}
 	
-	
+	/**
+	 * <h2> A Method that defines  </h2>
+	 */
 	@Override
 	public BufferedImage spriteSheet(int typeOfDecors){
 		
