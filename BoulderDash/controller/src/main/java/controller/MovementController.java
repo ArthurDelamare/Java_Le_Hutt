@@ -42,6 +42,11 @@ public class MovementController implements IMovementController {
 	private void callMovement(int sens){
 			if (this.searchAroundHero(sens, 3)==true) {
 				this.hero.setDiamonds(this.hero.getDiamonds()+1);
+				if (this.hero.getDiamonds()==5){
+					JOptionPane.showMessageDialog(null, "Well played ! You win !", "Win",
+					JOptionPane.PLAIN_MESSAGE);
+					System.exit(1);
+				}
 				System.out.println("Dimands : "+ this.hero.getDiamonds());
 			}
 			if (this.searchAroundHero(sens, 5)==true) {
