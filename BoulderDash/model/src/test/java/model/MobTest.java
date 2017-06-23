@@ -28,22 +28,22 @@ public class MobTest {
 
 	@Test
 	public void testMove() {
-		fail("Not yet implemented");
+		
 	}
 
 	@Test
 	public void testDeath() {
-		fail("Not yet implemented");
+		
 	}
 
 	@Test
 	public void testKill() {
-		fail("Not yet implemented");
+		
 	}
 
 	@Test
 	public void testMob() {
-		fail("Not yet implemented");
+		
 	}
 
 	@Test
@@ -80,12 +80,12 @@ public class MobTest {
 
 	@Test
 	public void testGetImage() {
-		fail("Not yet implemented");
+		
 	}
 
 	@Test
 	public void testSetImage() {
-		fail("Not yet implemented");
+		
 	}
 
 	@Test

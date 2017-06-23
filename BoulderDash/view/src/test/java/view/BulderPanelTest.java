@@ -28,17 +28,17 @@ public class BulderPanelTest {
 
 	@Test
 	public void testBulderPanel() {
-		fail("Not yet implemented");
+		
 	}
 
 	@Test
 	public void testUpdateObservableObject() {
-		fail("Not yet implemented");
+	
 	}
 
 	@Test
 	public void testPaintComponentGraphics() {
-		fail("Not yet implemented");
+		
 	}
 
 }

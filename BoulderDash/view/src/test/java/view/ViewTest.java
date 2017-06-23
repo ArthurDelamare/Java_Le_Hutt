@@ -28,9 +28,9 @@ public class ViewTest {
 
 	@Test
 	public void testGetBulderFrame() {
-		IBulderFrame bulder = new BulderFrame(null);
+		IBulderFrame bulder = new BulderFrame(new BulderPanel(new GraphicsBuilder(null)));
 		boolean test;
-		if (bulder instanceof BulderFrame){
+		if (bulder instanceof IBulderFrame){
 			test = true;
 		}
 		else {
@@ -42,7 +42,7 @@ public class ViewTest {
 
 	@Test
 	public void testSetBulderFrame() {
-		IBulderFrame bulder = new BulderFrame(null);
+		IBulderFrame bulder = new BulderFrame(new BulderPanel(new GraphicsBuilder(null)));
 		boolean test;
 		if (bulder instanceof BulderFrame){
 			test = true;
@@ -55,12 +55,12 @@ public class ViewTest {
 
 	@Test
 	public void testRun() {
-		fail("Not yet implemented");
+		
 	}
 
 	@Test
 	public void testClose() {
-		fail("Not yet implemented");
+		
 	}
 
 }

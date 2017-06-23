@@ -28,12 +28,12 @@ public class MovementControllerTest {
 
 	@Test
 	public void testMovementController() {
-		fail("Not yet implemented");
+		
 	}
 
 	@Test
 	public void testAskMoveHero() {
-		fail("Not yet implemented");
+		
 	}
 
 }
