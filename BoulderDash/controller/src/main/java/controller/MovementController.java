@@ -19,6 +19,9 @@ public class MovementController implements IMovementController {
 				exceptionRefresh = true;
 			break;
 		case 2 :
+			if (this.hero.getMap().getCellTable((this.hero.getPosX()+1), (this.hero.getPosY()+1)) == 4) {
+				this.fallObject(sens);
+			}	
 			if (this.hero.getMap().getCellTable((this.hero.getPosX()+2), (this.hero.getPosY())) == 4) {
 				this.hero.getMap().setCellTable(2,(this.hero.getPosX()+2), (this.hero.getPosY()));
 				this.hero.getMap().setCellTable(4,(this.hero.getPosX()+1), (this.hero.getPosY()));
@@ -26,18 +29,23 @@ public class MovementController implements IMovementController {
 			if (this.hero.getMap().getCellTable((this.hero.getPosX()+2), (this.hero.getPosY())) != 4) {
 				exceptionRefresh = true;
 			}	
+			
 			break;
 		case 3 :
 				exceptionRefresh = true;	
 			break;
 		case 4 :
+			if (this.hero.getMap().getCellTable((this.hero.getPosX()-1), (this.hero.getPosY()+1)) == 4) {
+				this.fallObject(sens);
+			}
 			if (this.hero.getMap().getCellTable((this.hero.getPosX()-2), (this.hero.getPosY())) == 4) {
 				this.hero.getMap().setCellTable(2,(this.hero.getPosX()-2), (this.hero.getPosY()));
 				this.hero.getMap().setCellTable(4,(this.hero.getPosX()-1), (this.hero.getPosY()));
-			}
+				}
 			if (this.hero.getMap().getCellTable((this.hero.getPosX()-2), (this.hero.getPosY())) != 4) {
 				exceptionRefresh = true;
 			}	
+				
 			break;
 		}
 		return exceptionRefresh;
@@ -47,6 +55,32 @@ public class MovementController implements IMovementController {
 		JOptionPane.showMessageDialog(null, "You died...", "Error",
         JOptionPane.ERROR_MESSAGE);
 		System.exit(1);
+	}
+	
+	private void fallObject(int sens){
+		Boolean voidUnder = true;
+		int i = 0;
+		while (voidUnder = true ){
+			i++;
+			switch (sens){
+			case 2 :
+					this.hero.getMap().setCellTable(2,(this.hero.getPosX()+1), (this.hero.getPosY()+i));
+					this.hero.getMap().setCellTable(4,(this.hero.getPosX()+1), (this.hero.getPosY()+i-1));
+					if (this.hero.getMap().getCellTable((this.hero.getPosX()+1), (this.hero.getPosY()+i+1)) == 4){
+						voidUnder = false;
+					}
+				break;
+			case 4 :
+				
+					this.hero.getMap().setCellTable(2,(this.hero.getPosX()-1), (this.hero.getPosY()+i));
+					this.hero.getMap().setCellTable(4,(this.hero.getPosX()-1), (this.hero.getPosY()+i-1));
+					if (this.hero.getMap().getCellTable((this.hero.getPosX()-1), (this.hero.getPosY()+i+2)) == 4){
+						voidUnder = true;
+					}
+				break;
+			}
+			
+		}
 	}
 	
 	private Boolean searchAroundHero(int sens, int typeObject){
@@ -85,8 +119,7 @@ public class MovementController implements IMovementController {
 				this.endOfGame();
 			}
 			if (this.searchAroundHero(sens, 2)==true) {
-				ExceptionRefresh = this.pushStone(sens);
-				
+				ExceptionRefresh = this.pushStone(sens);				
 			}
 		
 		if (ExceptionRefresh == true) {}
