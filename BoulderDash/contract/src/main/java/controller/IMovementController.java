@@ -2,6 +2,6 @@ package controller;
 
 public interface IMovementController {
 
-	void askMoveHero();
+	void askMoveHero(int keyCode);
 
 }

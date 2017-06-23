@@ -12,7 +12,6 @@ public class BulderPanel extends JPanel implements Observer, IBulderPanel{
 	
 	public BulderPanel(IGraphicsBuilder graphicsBuilder){
 		this.graphicsBuilder = graphicsBuilder;
-		System.out.println("Panel created.");
 	}
 	
 	/* (non-Javadoc)
@@ -20,7 +19,6 @@ public class BulderPanel extends JPanel implements Observer, IBulderPanel{
 	 */
 	@Override
 	public void update(Observable arg0, Object arg1) {
-		System.out.println("Update done.");
 		repaint();
 		
 	}

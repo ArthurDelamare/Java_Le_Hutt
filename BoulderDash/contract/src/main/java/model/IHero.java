@@ -1,8 +1,9 @@
 package model;
 
 import java.awt.Image;
+import java.util.Observer;
 
-public interface IHero {
+public interface IHero{
 
 	void walkOn();
 
@@ -34,6 +35,10 @@ public interface IHero {
 
 	void setImage(Image image);
 	
+	void addObserver(Observer o);
 	
+	void updatePanel();
+	
+	IMap getMap();
 
 }
