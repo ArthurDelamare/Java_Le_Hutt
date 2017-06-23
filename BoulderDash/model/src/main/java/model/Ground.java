@@ -18,6 +18,11 @@ public class Ground extends AbstractDecor implements IGround{
 	@Override
 	public void breaking(){
 		
+		
+		
+		
+		
+		
 	}
 	
 }

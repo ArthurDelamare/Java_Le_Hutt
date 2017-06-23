@@ -16,6 +16,7 @@ public class Stone extends AbstractDecor implements IStone{
 	@Override
 	public void movementFall(){
 		
+		
 	}
 	
 	/**

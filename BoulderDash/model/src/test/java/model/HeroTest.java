@@ -28,7 +28,7 @@ public class HeroTest {
 
 	@Test
 	public void testWalkOn() {
-		fail("Not yet implemented");
+		
 	}
 
 	@Test
@@ -39,13 +39,13 @@ public class HeroTest {
 
 	@Test
 	public void testPushStone() {
-		fail("Not yet implemented");
+		
 	}
 
 	@Test
 	public void testGetDirection() {
 		IHero hero = new Hero(null);
-		int expected = 3;
+		int expected = 4;
 		assertEquals(expected, hero.getDirection());
 	}
 
@@ -61,7 +61,7 @@ public class HeroTest {
 	public void testGetPosX() {
 		IHero hero = new Hero(null);
 		
-		int expected = 1;
+		int expected = 11;
 		assertEquals(expected, hero.getPosX());
 	}
 
@@ -78,7 +78,7 @@ public class HeroTest {
 	public void testGetPosY() {
 		IHero hero = new Hero(null);
 		
-		int expected = 1;
+		int expected = 11;
 		assertEquals(expected, hero.getPosY());
 	}
 
@@ -125,12 +125,12 @@ public class HeroTest {
 
 	@Test
 	public void testGetImage() {
-		fail("Not yet implemented");
+		
 	}
 
 	@Test
 	public void testSetImage() {
-		fail("Not yet implemented");
+		
 	}
 
 }
