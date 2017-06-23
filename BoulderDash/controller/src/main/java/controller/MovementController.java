@@ -1,6 +1,14 @@
 package controller;
 
-import javax.swing.JOptionPane;
+import java.net.URL;
+import java.util.concurrent.ThreadLocalRandom;
+import java.util.concurrent.TimeUnit;
+
+import javax.swing.*;
+
+import javax.sound.sampled.*;
+
+import java.io.*;
 
 import model.IHero;
 
@@ -18,10 +26,7 @@ public class MovementController implements IMovementController {
 		case 1 :
 				exceptionRefresh = true;
 			break;
-		case 2 :
-			if (this.hero.getMap().getCellTable((this.hero.getPosX()+1), (this.hero.getPosY()+1)) == 4) {
-				this.fallObject(sens);
-			}	
+		case 2 :	
 			if (this.hero.getMap().getCellTable((this.hero.getPosX()+2), (this.hero.getPosY())) == 4) {
 				this.hero.getMap().setCellTable(2,(this.hero.getPosX()+2), (this.hero.getPosY()));
 				this.hero.getMap().setCellTable(4,(this.hero.getPosX()+1), (this.hero.getPosY()));
@@ -35,9 +40,6 @@ public class MovementController implements IMovementController {
 				exceptionRefresh = true;	
 			break;
 		case 4 :
-			if (this.hero.getMap().getCellTable((this.hero.getPosX()-1), (this.hero.getPosY()+1)) == 4) {
-				this.fallObject(sens);
-			}
 			if (this.hero.getMap().getCellTable((this.hero.getPosX()-2), (this.hero.getPosY())) == 4) {
 				this.hero.getMap().setCellTable(2,(this.hero.getPosX()-2), (this.hero.getPosY()));
 				this.hero.getMap().setCellTable(4,(this.hero.getPosX()-1), (this.hero.getPosY()));
@@ -52,7 +54,10 @@ public class MovementController implements IMovementController {
 	}
 	
 	private void endOfGame(){
-		JOptionPane.showMessageDialog(null, "You died...", "Error",
+		
+		playSoundEffect("dying.wav");
+		
+		JOptionPane.showMessageDialog(null, "You died...", "Dead",
         JOptionPane.ERROR_MESSAGE);
 		System.exit(1);
 	}
@@ -109,6 +114,7 @@ public class MovementController implements IMovementController {
 		Boolean ExceptionRefresh = false;
 			if (this.searchAroundHero(sens, 3)==true) {
 				this.hero.setDiamonds(this.hero.getDiamonds()+1);
+				playSoundEffect("diamond.wav");
 				if (this.hero.getDiamonds()==5){
 					JOptionPane.showMessageDialog(null, "Well played ! You win !", "Win",
 					JOptionPane.PLAIN_MESSAGE);
@@ -130,6 +136,13 @@ public class MovementController implements IMovementController {
 			
 			
 		}
+		int randomDig = ThreadLocalRandom.current().nextInt(1,4);
+		String randomDigString = String.valueOf(randomDig);
+		String digSound = "dig".concat(randomDigString);
+		String digSound2 = digSound.concat(".wav");
+		
+	
+		
 		this.hero.getMap().fillMapObjects();
 		this.hero.updatePanel();
 		
@@ -157,4 +170,25 @@ public class MovementController implements IMovementController {
 		
 		
 	}
+	
+	private void playSoundEffect(String sourceSound){
+		try {
+		URL url = this.getClass().getClassLoader().getResource(sourceSound);
+        AudioInputStream audioIn = AudioSystem.getAudioInputStream(url);
+        // Get a sound clip resource.
+        Clip clip = AudioSystem.getClip();
+        // Open audio clip and load samples from the audio input stream.
+        clip.open(audioIn);
+        clip.start();
+		}
+        
+        catch (UnsupportedAudioFileException e) {
+            e.printStackTrace();
+         } catch (IOException e) {
+            e.printStackTrace();
+         } catch (LineUnavailableException e) {
+            e.printStackTrace();
+         }
+	}
+	
 }
