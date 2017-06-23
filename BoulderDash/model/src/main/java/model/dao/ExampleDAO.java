@@ -39,7 +39,6 @@ public abstract class ExampleDAO extends AbstractDAO {
         
         String result = callStatement.getString(2);
         
-        System.out.println(result);
         
         return result;
     }
