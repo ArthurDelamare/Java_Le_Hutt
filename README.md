@@ -14,6 +14,6 @@ Fell free to download / play or fork it as you wish !
 2) Install Java Runtime Environment ( Last Version ) http://www.oracle.com/technetwork/java/javase/downloads/jre8-downloads-2133155.html
 3) Create a database ( XAMPP or WAMPP ). 
 4) In this Database create a virtual database "boulderdash"
-5) Execute the file toExecute.sql in /Maps folder
+5) Execute the file toExecute.sql (who is in /Maps folder ) on your database.
 
 Now you just have to launch Play.jar ! Have fun !
