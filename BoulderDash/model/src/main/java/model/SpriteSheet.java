@@ -24,6 +24,7 @@ public class SpriteSheet implements ISpriteSheet {
 		
 		BufferedImage imageDecors = null;
 		BufferedImage imageHero = null;
+		int theme = 5;
 	
 		try {
 			try {
@@ -35,13 +36,57 @@ public class SpriteSheet implements ISpriteSheet {
 		} catch (IOException e) {
 		    e.printStackTrace();
 		}
+		switch (theme){
+		case 1 :
+			this.wall = imageDecors.getSubimage(0,0,16,16);
+			this.ground = imageDecors.getSubimage(16,0,16,16);
+			this.stone = imageDecors.getSubimage(48,0,16,16);
+			this.diamond = imageDecors.getSubimage(64,0,16,16);
+			this.background = imageDecors.getSubimage(32,0,16,16);
+			this.mob = imageDecors.getSubimage(144,0,16,16);
+			break;
+		case 2 :
+			this.wall = imageDecors.getSubimage(0,64,16,16);
+			this.ground = imageDecors.getSubimage(16,64,16,16);
+			this.stone = imageDecors.getSubimage(48,64,16,16);
+			this.diamond = imageDecors.getSubimage(64,64,16,16);
+			this.background = imageDecors.getSubimage(32,64,16,16);
+			this.mob = imageDecors.getSubimage(144,64,16,16);
+			break;
+		case 3 :
+			this.wall = imageDecors.getSubimage(0,128,16,16);
+			this.ground = imageDecors.getSubimage(16,128,16,16);
+			this.stone = imageDecors.getSubimage(48,128,16,16);
+			this.diamond = imageDecors.getSubimage(64,128,16,16);
+			this.background = imageDecors.getSubimage(32,128,16,16);
+			this.mob = imageDecors.getSubimage(144,128,16,16);
+			break;
+		case 4 :
+			this.wall = imageDecors.getSubimage(0,192,16,16);
+			this.ground = imageDecors.getSubimage(16,192,16,16);
+			this.stone = imageDecors.getSubimage(48,192,16,16);
+			this.diamond = imageDecors.getSubimage(64,192,16,16);
+			this.background = imageDecors.getSubimage(32,192,16,16);
+			this.mob = imageDecors.getSubimage(144,192,16,16);
+			break;
+		case 5 :
+			this.wall = imageDecors.getSubimage(0,256,16,16);
+			this.ground = imageDecors.getSubimage(16,256,16,16);
+			this.stone = imageDecors.getSubimage(48,256,16,16);
+			this.diamond = imageDecors.getSubimage(64,256,16,16);
+			this.background = imageDecors.getSubimage(32,256,16,16);
+			this.mob = imageDecors.getSubimage(144,256,16,16);
+			break;
 		
-		this.wall = imageDecors.getSubimage(0,0,16,16);
-		this.ground = imageDecors.getSubimage(16,0,16,16);
-		this.stone = imageDecors.getSubimage(48,0,16,16);
-		this.diamond = imageDecors.getSubimage(64,0,16,16);
-		this.background = imageDecors.getSubimage(32,0,16,16);
-		this.mob = imageDecors.getSubimage(144,0,16,16);
+		case 6 :
+			this.wall = imageDecors.getSubimage(0,320,16,16);
+			this.ground = imageDecors.getSubimage(16,320,16,16);
+			this.stone = imageDecors.getSubimage(48,320,16,16);
+			this.diamond = imageDecors.getSubimage(64,320,16,16);
+			this.background = imageDecors.getSubimage(32,320,16,16);
+			this.mob = imageDecors.getSubimage(144,320,16,16);
+			break;
+		}
 		
 		try {
 			try {
