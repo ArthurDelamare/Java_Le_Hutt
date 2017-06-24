@@ -53,8 +53,23 @@ public class MovementController implements IMovementController {
 		return exceptionRefresh;
 	}
 	
+	private void explosion(int posX, int posY){
+		this.hero.getMap().setCellTable(4,posX-1, posY-1);
+		this.hero.getMap().setCellTable(4,posX, posY-1);
+		this.hero.getMap().setCellTable(4,posX+1, posY-1);
+		this.hero.getMap().setCellTable(4,posX-1, posY);
+		this.hero.getMap().setCellTable(4,posX, posY);
+		this.hero.getMap().setCellTable(4,posX+1, posY);
+		this.hero.getMap().setCellTable(4,posX-1, posY+1);
+		this.hero.getMap().setCellTable(4,posX, posY+1);
+		this.hero.getMap().setCellTable(4,posX+1, posY+1);
+		playSoundEffect("explosion.wav");
+		System.out.println("MORT");
+	}
+	
 	private void endOfGame(int typeOfDead){
 		
+		this.explosion(this.hero.getPosX() , this.hero.getPosY());
 		playSoundEffect("dying.wav");
 		switch (typeOfDead){
 		case 1:
@@ -70,7 +85,7 @@ public class MovementController implements IMovementController {
 			JOptionPane.ERROR_MESSAGE);
 			break;
 		}
-		System.exit(1);
+		//System.exit(1);
 	}
 	
 	private void fallObject(){
@@ -82,12 +97,18 @@ public class MovementController implements IMovementController {
 					if (this.hero.getMap().getCellTable(i, j+2) == 6) {
 						this.endOfGame(3);
 					}
+					if (this.hero.getMap().getCellTable(i, j+2) == 5) {
+						this.explosion(i , j+2);
+					}
 				}
 				if ((this.hero.getMap().getCellTable(i, j) == 2) && (this.hero.getMap().getCellTable(i, j+1) == 4)) {
 					this.hero.getMap().setCellTable(4,i,j);
 					this.hero.getMap().setCellTable(2,i,j+1);
 					if (this.hero.getMap().getCellTable(i, j+2) == 6) {
 						this.endOfGame(2);
+					}
+					if (this.hero.getMap().getCellTable(i, j+2) == 5) {
+						this.explosion(i , j+2);
 					}
 				}
 				
