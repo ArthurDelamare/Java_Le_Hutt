@@ -144,7 +144,7 @@ public class MovementController implements IMovementController {
 				this.hero.setDiamonds(this.hero.getDiamonds()+1);
 				playSoundEffect("diamond.wav");
 				if (this.hero.getDiamonds()==5){
-					JOptionPane.showMessageDialog(null, "Well played ! You win !", "Win",
+					JOptionPane.showMessageDialog(null, "Well played ! You win !", "Win", 
 					JOptionPane.PLAIN_MESSAGE);
 					System.exit(1);
 				}
@@ -201,6 +201,9 @@ public class MovementController implements IMovementController {
         Clip clip = AudioSystem.getClip();
         // Open audio clip and load samples from the audio input stream.
         clip.open(audioIn);
+        FloatControl gainControl = 
+        	    (FloatControl) clip.getControl(FloatControl.Type.MASTER_GAIN);
+        gainControl.setValue(-10.0f);
         clip.start();
 		}
         
