@@ -90,7 +90,7 @@ public class SpriteSheet implements ISpriteSheet {
 		
 		try {
 			try {
-				imageHero = ImageIO.read(new File(getClass().getResource("/textures/personnage.png").toURI()));
+				imageHero = ImageIO.read(new File(getClass().getResource("/textures/player.png").toURI()));
 			} catch (URISyntaxException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
