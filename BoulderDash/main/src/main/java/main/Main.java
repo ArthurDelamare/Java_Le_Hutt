@@ -1,8 +1,6 @@
 package main;
 
-import java.sql.SQLException;
-
-import controller.Controller;
+import java.io.IOException;import java.net.URL;import java.sql.SQLException;import javax.sound.sampled.AudioInputStream;import javax.sound.sampled.AudioSystem;import javax.sound.sampled.Clip;import javax.sound.sampled.LineUnavailableException;import javax.sound.sampled.UnsupportedAudioFileException;import controller.Controller;
 import controller.ControllerFacade;
 import model.IModelT;
 import controller.IController;
@@ -22,9 +20,8 @@ public abstract class Main {
      * @param args
      *            the arguments
      */
-	
-    public static void main(final String[] args) {    	    	final IModelT model = new Model();
+    public static void main(final String[] args) {    	    	    	final IModelT model = new Model();
         final IView view = new View();
-        try {        				final IController controller = new Controller(view, model);					} catch (SQLException e) {			// TODO Auto-generated catch block			e.printStackTrace();		}
+        try {        				final IController controller = new Controller(view, model);		} catch (SQLException e) {			// TODO Auto-generated catch block			e.printStackTrace();		}
     }
 }
