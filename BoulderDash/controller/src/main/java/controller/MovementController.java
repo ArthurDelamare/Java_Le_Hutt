@@ -53,12 +53,23 @@ public class MovementController implements IMovementController {
 		return exceptionRefresh;
 	}
 	
-	private void endOfGame(){
+	private void endOfGame(int typeOfDead){
 		
 		playSoundEffect("dying.wav");
-		
-		JOptionPane.showMessageDialog(null, "You died...", "Dead",
-        JOptionPane.ERROR_MESSAGE);
+		switch (typeOfDead){
+		case 1:
+			JOptionPane.showMessageDialog(null, "You've been eat by a monster. Try again !", "Dead",
+			JOptionPane.ERROR_MESSAGE);
+			break;
+		case 2:
+			JOptionPane.showMessageDialog(null, "You've been crush by a stone. Try again !", "Dead",
+			JOptionPane.ERROR_MESSAGE);
+			break;
+		case 3:
+			JOptionPane.showMessageDialog(null, "You've been crush by a diamond. Try again !", "Dead",
+			JOptionPane.ERROR_MESSAGE);
+			break;
+		}
 		System.exit(1);
 	}
 	
@@ -68,11 +79,18 @@ public class MovementController implements IMovementController {
 				if ((this.hero.getMap().getCellTable(i, j) == 3) && (this.hero.getMap().getCellTable(i, j+1) == 4)) {
 					this.hero.getMap().setCellTable(4,i,j);
 					this.hero.getMap().setCellTable(3,i,j+1);
+					if (this.hero.getMap().getCellTable(i, j+2) == 6) {
+						this.endOfGame(3);
+					}
 				}
 				if ((this.hero.getMap().getCellTable(i, j) == 2) && (this.hero.getMap().getCellTable(i, j+1) == 4)) {
 					this.hero.getMap().setCellTable(4,i,j);
 					this.hero.getMap().setCellTable(2,i,j+1);
+					if (this.hero.getMap().getCellTable(i, j+2) == 6) {
+						this.endOfGame(2);
+					}
 				}
+				
 			}
 		}
 	}
@@ -111,7 +129,7 @@ public class MovementController implements IMovementController {
 				}
 			}
 			if (this.searchAroundHero(sens, 5)==true) {
-				this.endOfGame();
+				this.endOfGame(1);
 			}
 			if (this.searchAroundHero(sens, 2)==true) {
 				ExceptionRefresh = this.pushStone(sens);				
