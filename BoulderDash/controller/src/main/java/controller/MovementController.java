@@ -62,29 +62,18 @@ public class MovementController implements IMovementController {
 		System.exit(1);
 	}
 	
-	private void fallObject(int sens){
-		Boolean voidUnder = true;
-		int i = 0;
-		while (voidUnder = true ){
-			i++;
-			switch (sens){
-			case 2 :
-					this.hero.getMap().setCellTable(2,(this.hero.getPosX()+1), (this.hero.getPosY()+i));
-					this.hero.getMap().setCellTable(4,(this.hero.getPosX()+1), (this.hero.getPosY()+i-1));
-					if (this.hero.getMap().getCellTable((this.hero.getPosX()+1), (this.hero.getPosY()+i+1)) == 4){
-						voidUnder = false;
-					}
-				break;
-			case 4 :
-				
-					this.hero.getMap().setCellTable(2,(this.hero.getPosX()-1), (this.hero.getPosY()+i));
-					this.hero.getMap().setCellTable(4,(this.hero.getPosX()-1), (this.hero.getPosY()+i-1));
-					if (this.hero.getMap().getCellTable((this.hero.getPosX()-1), (this.hero.getPosY()+i+2)) == 4){
-						voidUnder = true;
-					}
-				break;
+	private void fallObject(){
+		for (int i=this.hero.getPosX()-7; i<this.hero.getPosX()+8; i++){
+			for (int j=this.hero.getPosY()-7; j<this.hero.getPosY()+8; j++){
+				if ((this.hero.getMap().getCellTable(i, j) == 3) && (this.hero.getMap().getCellTable(i, j+1) == 4)) {
+					this.hero.getMap().setCellTable(4,i,j);
+					this.hero.getMap().setCellTable(3,i,j+1);
+				}
+				if ((this.hero.getMap().getCellTable(i, j) == 2) && (this.hero.getMap().getCellTable(i, j+1) == 4)) {
+					this.hero.getMap().setCellTable(4,i,j);
+					this.hero.getMap().setCellTable(2,i,j+1);
+				}
 			}
-			
 		}
 	}
 	
@@ -136,13 +125,7 @@ public class MovementController implements IMovementController {
 			
 			
 		}
-		int randomDig = ThreadLocalRandom.current().nextInt(1,4);
-		String randomDigString = String.valueOf(randomDig);
-		String digSound = "dig".concat(randomDigString);
-		String digSound2 = digSound.concat(".wav");
-		
-	
-		
+		this.fallObject();
 		this.hero.getMap().fillMapObjects();
 		this.hero.updatePanel();
 		
