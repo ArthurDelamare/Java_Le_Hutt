@@ -85,7 +85,7 @@ public class MovementController implements IMovementController {
 			JOptionPane.ERROR_MESSAGE);
 			break;
 		}
-		//System.exit(1);
+		System.exit(1);
 	}
 	
 	private void fallObject(){
