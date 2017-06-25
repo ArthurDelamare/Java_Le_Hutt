@@ -73,19 +73,19 @@ public class MovementController implements IMovementController {
 		playSoundEffect("dying.wav");
 		switch (typeOfDead){
 		case 1:
-			JOptionPane.showMessageDialog(null, "You've been eat by a monster. Try again !", "Dead",
+			JOptionPane.showMessageDialog(null, "You've been eaten by a monster. Try again !", "Dead",
 			JOptionPane.ERROR_MESSAGE);
 			break;
 		case 2:
-			JOptionPane.showMessageDialog(null, "You've been crush by a stone. Try again !", "Dead",
+			JOptionPane.showMessageDialog(null, "You've been crushed by a stone. Try again !", "Dead",
 			JOptionPane.ERROR_MESSAGE);
 			break;
 		case 3:
-			JOptionPane.showMessageDialog(null, "You've been crush by a diamond. Try again !", "Dead",
+			JOptionPane.showMessageDialog(null, "You've been crushed by a diamond. Try again !", "Dead",
 			JOptionPane.ERROR_MESSAGE);
 			break;
 		}
-		//System.exit(1);
+		System.exit(1);
 	}
 	
 	private void fallObject(){
@@ -144,7 +144,8 @@ public class MovementController implements IMovementController {
 				this.hero.setDiamonds(this.hero.getDiamonds()+1);
 				playSoundEffect("diamond.wav");
 				if (this.hero.getDiamonds()==5){
-					JOptionPane.showMessageDialog(null, "Well played ! You win !", "Win", 
+					this.playSoundEffect("win.wav");
+					JOptionPane.showMessageDialog(null, "Well played ! You won !", "Win", 
 					JOptionPane.PLAIN_MESSAGE);
 					System.exit(1);
 				}
