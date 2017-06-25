@@ -144,6 +144,7 @@ public class MovementController implements IMovementController {
 				this.hero.setDiamonds(this.hero.getDiamonds()+1);
 				playSoundEffect("diamond.wav");
 				if (this.hero.getDiamonds()==5){
+					this.playSoundEffect("win.wav");
 					JOptionPane.showMessageDialog(null, "Well played ! You win !", "Win", 
 					JOptionPane.PLAIN_MESSAGE);
 					System.exit(1);
